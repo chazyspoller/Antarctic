@@ -1,0 +1,23 @@
+.main-nav {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  column-gap: 15px;
+  align-items: center;
+
+  @include vp-767 {
+    grid-template-rows: min-content auto;
+    grid-template-areas:
+      "logo burger"
+      "nav nav";
+  }
+
+  &__burger {
+    justify-self: end;
+  }
+
+  &__link {
+  }
+
+  &__list {
+  }
+}

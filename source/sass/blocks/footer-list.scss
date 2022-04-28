@@ -1,0 +1,53 @@
+.footer-list {
+  @include reset-margins;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  @include vp-767 {
+    flex-direction: column;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 33px;
+    }
+    padding: 5px 0;
+
+    font: 500 1em/1em $ff-default;
+
+    @include vp-1365 {
+      &:not(:last-child) {
+        margin-right: 23px;
+      }
+      font-size: 0.75em;
+      line-height: 0.8em;
+    }
+
+    @include vp-767 {
+      &:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 23px;
+      }
+    }
+
+    a {
+      color: $color-default-white;
+      transition: opacity 0.3s ease 0s;
+
+
+      @media (hover: hover), screen {
+        &:hover,
+        &:focus {
+          opacity: 0.6;
+          outline: none;
+        }
+      }
+
+      &:active {
+        color: $color-active;
+      }
+    }
+  }
+}

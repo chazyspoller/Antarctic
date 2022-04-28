@@ -1,0 +1,100 @@
+.nav-list {
+  @include reset-margins;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+
+  @include vp-767 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 85px 25/320 * 100% 25px;
+    width: 285/320 * 100%;
+    height: 100vh;
+    /* stylelint-disable-next-line */
+    height: calc(100 * var(--vh, 1vh));
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    background-color: $color-default-white;
+    overflow: scroll;
+    z-index: 5;
+
+    &::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: 5;
+      width: 285/320 * 100%;
+      height: 70px;
+      background-color: $color-default-white;
+    }
+  }
+
+  &--nojs {
+    @include vp-767 {
+      position: relative;
+      width: 100%;
+      height: auto;
+      margin: 20px 0;
+      grid-area: nav;
+      padding: 25px;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  &--hidden {
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &__item {
+    margin-left: 22px;
+    font: 500 1em/1.5em $ff-default;
+
+    @include vp-1365 {
+      margin-left: 12px;
+      font-size: 0.875em;
+    }
+
+    @include vp-767 {
+      margin-left: 0;
+      padding: 0;
+      font-size: 1.125em;
+
+      &:not(:last-child) {
+        margin-bottom: 26px;
+      }
+    }
+
+    a {
+      color: $color-default-white;
+      display: inline-block;
+      padding: 5px;
+      border-bottom: 2px solid $color-transparent;
+      transition: border-bottom 0.3s ease 0s;
+
+      @media (hover: hover), screen {
+        &:hover,
+        &:focus {
+          border-bottom: 2px solid $color-default-white;
+          outline: none;
+        }
+      }
+
+      &:active {
+        color: $color-active;
+      }
+
+      @include vp-767 {
+        color: $color-dark-blue;
+      }
+    }
+  }
+}
