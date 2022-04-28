@@ -25,9 +25,8 @@
 
 <body>
   <div class="wrapper">
-    <header class="header">
+    <header class="header header--nojs">
       <div class="container">
-
         <nav class="header__main-nav main-nav">
           <a class="main-nav__link logo">
             <img class="logo-light" src="img/svg/logo.svg" alt="Круизы в Антарктику" width="70" height="38">
@@ -54,33 +53,32 @@
             </li>
           </ul>
         </nav>
-
       </div>
-
-      <picture class="header__back">
-        <source type="image/webp" media="(max-width: 767px"
-          srcset="img/intro-back-mobile.webp 1x, img/intro-back-mobile@2x.webp 2x">
-        <source type="image/webp" media="(max-width: 1365px)"
-          srcset="img/intro-back-tablet.webp 1x, img/intro-back-tablet@2x.webp 2x">
-        <source type="image/webp" srcset="img/intro-back.webp 1x, img/intro-back@2x.webp 2x">
-
-        <!-- 1х: 320px; 2x: 640px -->
-        <source type="image/jpeg" media="(max-width: 767px)"
-          srcset="img/intro-back-mobile.jpg 1x, img/intro-back-mobile@2x.jpg 2x">
-        <!-- 1х: 768px; 2x: 1536px -->
-        <source type="image/jpeg" media="(max-width: 1365px)"
-          srcset="img/intro-back-tablet.jpg 1x, img/intro-back-tablet@2x.jpg 2x">
-        <!-- 1х: 1366px; 2x: 2732px -->
-        <img src="img/intro-back.jpg" srcset="img/intro-back@2x.jpg 2x" alt="Пейзаж Антарктики" width="1366"
-          height="650">
-      </picture>
-
     </header>
     <main>
       <section class="intro">
         <div class="container">
           <h1>Круизы в&nbsp;Антарктику</h1>
+
           <p>Волшебный мир айсбергов&nbsp;и&nbsp;пингвинов</p>
+
+          <picture class="intro__back">
+            <source type="image/webp" media="(max-width: 767px)"
+              srcset="img/intro-back-mobile.webp 1x, img/intro-back-mobile@2x.webp 2x">
+            <source type="image/webp" media="(max-width: 1365px)"
+              srcset="img/intro-back-tablet.webp 1x, img/intro-back-tablet@2x.webp 2x">
+            <source type="image/webp" srcset="img/intro-back.webp 1x, img/intro-back@2x.webp 2x">
+
+            <!-- 1х: 320px; 2x: 640px -->
+            <source type="image/jpeg" media="(max-width: 767px)"
+              srcset="img/intro-back-mobile.jpg 1x, img/intro-back-mobile@2x.jpg 2x">
+            <!-- 1х: 768px; 2x: 1536px -->
+            <source type="image/jpeg" media="(max-width: 1365px)"
+              srcset="img/intro-back-tablet.jpg 1x, img/intro-back-tablet@2x.jpg 2x">
+            <!-- 1х: 1366px; 2x: 2732px -->
+            <img src="img/intro-back.jpg" srcset="img/intro-back@2x.jpg 2x" alt="Пейзаж Антарктики" width="1366"
+              height="650">
+          </picture>
         </div>
       </section>
       <section class="adventure">
@@ -96,7 +94,7 @@
                 китов, морских котиков&nbsp;и&nbsp;многое другое.</p>
             </div>
             <picture class="adventure__photo">
-              <source type="image/webp" media="(max-width: 767px"
+              <source type="image/webp" media="(max-width: 767px)"
                 srcset="img/penguins-mobile.webp 1x, img/penguins-mobile@2x.webp 2x">
               <source type="image/webp" media="(max-width: 1365px)"
                 srcset="img/penguins-tablet.webp 1x, img/penguins-tablet@2x.webp 2x">

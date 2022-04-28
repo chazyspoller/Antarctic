@@ -1,16 +1,43 @@
 .intro {
   color: $color-default-white;
   text-shadow: 0px 4px 4px rgba($color-default-black, 0.25);
-  min-height: 542px;
-  padding: 162px 95/1160 * 100% 20px;
+  min-height: 650px;
+  padding: 162px + 108px 95/1160 * 100% 20px;
+  box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 3;
 
   @include vp-1365 {
-    padding: 185px 0 20px;
+    padding: 185px + 83px 0 20px;
+    min-height: 638px;
   }
 
   @include vp-767 {
-    padding: 117px 0 20px;
-    min-height: 438px;
+    padding: 117px + 60px 0 20px;
+    min-height: 500px;
+  }
+
+  &__back {
+    img {
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      object-position: center center;
+      background-color: $header-background;
+
+      //@include vp-1365 {
+      //  height: 638px;
+      //}
+
+      @include vp-767 {
+        //height: 500px;
+        object-position: center 75%;
+      }
+    }
   }
 
   h1 {

@@ -26,6 +26,7 @@ const burgerOnEsc = (evt) => {
   }
 };
 
+header.classList.toggle('header--nojs');
 mainNav.classList.remove('nav-list--nojs');
 mainNav.classList.add('nav-list--hidden');
 
