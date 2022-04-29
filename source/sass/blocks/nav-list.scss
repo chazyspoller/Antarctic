@@ -5,7 +5,24 @@
   flex-wrap: wrap;
   justify-content: flex-end;
 
+  &--nojs {
+    @include vp-767 {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: auto;
+      margin: 20px 0 0;
+      grid-area: nav;
+      padding: 25px;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
   @include vp-767 {
+    display: none;
     position: absolute;
     top: 0;
     right: 0;
@@ -20,6 +37,7 @@
     background-color: $color-default-white;
     overflow: scroll;
     z-index: 5;
+    transition: transform 0.3s ease 0s;
 
     &::before {
       content: "";
@@ -33,24 +51,9 @@
     }
   }
 
-  &--nojs {
+  &--active {
     @include vp-767 {
-      position: relative;
-      width: 100%;
-      height: auto;
-      margin: 20px 0 0;
-      grid-area: nav;
-      padding: 25px;
-
-      &::before {
-        display: none;
-      }
-    }
-  }
-
-  &--hidden {
-    @include vp-767 {
-      display: none;
+      display: block;
     }
   }
 

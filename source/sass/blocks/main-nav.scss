@@ -12,12 +12,7 @@
   }
 
   &__burger {
+    grid-area: burger;
     justify-self: end;
-  }
-
-  &__link {
-  }
-
-  &__list {
   }
 }

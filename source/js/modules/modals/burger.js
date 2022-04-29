@@ -1,34 +1,78 @@
-const burger = document.querySelector('.burger');
 const header = document.querySelector('.header');
-const mainNav = document.querySelector('.nav-list');
+const burger = header.querySelector('[data-open-modal="burger"]');
+const mainNav = document.querySelector('[data-modal="nav-list"]');
 const logoLight = header.querySelector('.logo-light');
 const logoDark = header.querySelector('.logo-dark');
 const body = document.querySelector('body');
+const mainNavLinks = mainNav.querySelectorAll('[data-links="main-nav-link"]');
 
-const burgerOnCLick = () => {
-  burger.classList.toggle('burger--close');
-  mainNav.classList.toggle('nav-list--hidden');
-  logoLight.classList.toggle('logo-light--inactive');
-  logoDark.classList.toggle('logo-dark--active');
-  body.classList.toggle('scroll-lock');
+const checkExist = burger && header && mainNav;
+
+const jsActive = () => {
+  header.classList.remove('header--nojs');
+  mainNav.classList.remove('nav-list--nojs');
 };
 
-const burgerOnEsc = (evt) => {
-  const isEsc = evt.key === 'Escape' || evt.key === 'Esc';
-
-  if (isEsc && !mainNav.classList.contains('nav-list--hidden')) {
-    evt.preventDefault();
-    burger.classList.remove('burger--close');
-    mainNav.classList.add('nav-list--hidden');
+const closeMainNav = () => {
+  if (logoLight && logoDark) {
     logoLight.classList.remove('logo-light--inactive');
     logoDark.classList.remove('logo-dark--active');
-    body.classList.remove('scroll-lock');
+  }
+
+  burger.classList.remove('burger--close');
+  mainNav.classList.remove('nav-list--active');
+  body.classList.remove('scroll-lock');
+  body.classList.remove('scroll-lock-ios');
+};
+
+const burgerOnCLick = () => {
+  if (logoLight && logoDark) {
+    logoLight.classList.toggle('logo-light--inactive');
+    logoDark.classList.toggle('logo-dark--active');
+  }
+
+  burger.classList.toggle('burger--close');
+  mainNav.classList.toggle('nav-list--active');
+  body.classList.toggle('scroll-lock');
+  body.classList.remove('scroll-lock-ios');
+
+};
+
+const onDocumentEscCloseMenu = (evt) => {
+  const isEsc = evt.key === 'Escape' || evt.key === 'Esc';
+
+  if (isEsc && mainNav.classList.contains('nav-list--active')) {
+    evt.preventDefault();
+    closeMainNav();
   }
 };
 
-header.classList.toggle('header--nojs');
-mainNav.classList.remove('nav-list--nojs');
-mainNav.classList.add('nav-list--hidden');
+const onDocumentCLickCloseMenu = (evt) => {
+  if (mainNav.classList.contains('nav-list--active') && !mainNav.contains(evt.target) && evt.target !== burger) {
+    closeMainNav();
+  }
+};
 
-burger.addEventListener('click', burgerOnCLick);
-burger.addEventListener('keydown', burgerOnEsc);
+const onLinkClick = () => {
+  closeMainNav();
+};
+
+const linksListener = () => {
+  if (mainNavLinks.length) {
+    for (let link of mainNavLinks) {
+      link.addEventListener('click', onLinkClick);
+    }
+  }
+};
+
+const activateMainNav = () => {
+  if (checkExist) {
+    jsActive();
+    burger.addEventListener('click', burgerOnCLick);
+    burger.addEventListener('keydown', onDocumentEscCloseMenu);
+    document.addEventListener('click', onDocumentCLickCloseMenu);
+    linksListener();
+  }
+};
+
+export { activateMainNav };
