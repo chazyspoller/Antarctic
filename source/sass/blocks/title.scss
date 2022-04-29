@@ -1,0 +1,15 @@
+.title {
+  @include reset-margins;
+  font: 600 1.75em/1.5em $ff-default;
+  margin-bottom: 40px;
+  color: $color-dark-blue;
+
+  @include vp-1365 {
+    font-size: 1.625em;
+    margin-bottom: 30px;
+  }
+
+  @include vp-767 {
+    font-size: 1.5em;
+  }
+}

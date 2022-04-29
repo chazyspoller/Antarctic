@@ -709,6 +709,7 @@ button,
   height: 14px;
   background-color: transparent;
   border: none;
+  cursor: pointer;
   position: relative;
   z-index: 10;
   display: none;
@@ -783,6 +784,14 @@ button,
 
 .logo-dark {
   display: none;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+  font: 600 1.75em/1.5em "Montserrat", "Arial", sans-serif;
+  margin-bottom: 40px;
+  color: #011C40;
 }
 
 .footer {
@@ -947,9 +956,6 @@ button,
 }
 
 .adventure__title h3 {
-  margin: 0;
-  padding: 0;
-  font: 600 1.75em/1.5em "Montserrat", "Arial", sans-serif;
   margin-bottom: 40px;
 }
 
@@ -968,6 +974,69 @@ button,
   object-fit: cover;
   -o-object-position: center top;
   object-position: center top;
+}
+
+.advantages {
+  position: relative;
+  padding: 120px 0;
+  min-height: 562px;
+}
+
+.advantages h2 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.advantages__back img {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center center;
+  object-position: center center;
+  background-color: #D7E4F3;
+}
+
+.advantages-list {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.advantages-list__item {
+  margin-bottom: 10px;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 31%;
+  flex: 0 0 31%;
+  padding: 30px;
+  background-color: #F9FBFD;
+  color: #011C40;
+}
+
+.advantages-list__item svg {
+  margin-bottom: 10px;
+}
+
+.advantages-list__item dt {
+  font: 500 1.125em/1.3em "Montserrat", "Arial", sans-serif;
+  margin-bottom: 15px;
+}
+
+.advantages-list__item dd {
+  margin: 0;
+  padding: 0;
+  font: 400 0.875em/1.2em "Montserrat", "Arial", sans-serif;
 }
 
 /* @media (hover: hover), screen and (min-width: 0\0) {
@@ -994,6 +1063,11 @@ button,
   .logo {
     width: 38px;
     height: 20px;
+  }
+
+  .title {
+    font-size: 1.625em;
+    margin-bottom: 30px;
   }
 
   .footer__nav {
@@ -1034,7 +1108,6 @@ button,
   }
 
   .adventure__title h3 {
-    font-size: 1.625em;
     margin-bottom: 30px;
   }
 
@@ -1044,6 +1117,19 @@ button,
 
   .adventure__photo img {
     height: 264px;
+  }
+
+  .advantages {
+    padding: 100px 0;
+  }
+
+  .advantages-list__item {
+    padding: 25px 20px;
+  }
+
+  .advantages-list__item svg {
+    width: auto;
+    height: 26px;
   }
 }
 
@@ -1168,6 +1254,10 @@ button,
     z-index: 10;
   }
 
+  .title {
+    font-size: 1.5em;
+  }
+
   .footer {
     padding: 40px 0;
   }
@@ -1250,10 +1340,6 @@ button,
     max-width: 100%;
   }
 
-  .adventure__title h3 {
-    font-size: 1.5em;
-  }
-
   .adventure__title p {
     margin-bottom: 40px;
   }
@@ -1264,6 +1350,36 @@ button,
 
   .adventure__photo img {
     height: 186px;
+  }
+
+  .advantages {
+    padding: 65px 0;
+  }
+
+  .advantages h2 {
+    margin-bottom: 40px;
+  }
+
+  .advantages__back img {
+    -o-object-position: center 75%;
+    object-position: center 75%;
+  }
+
+  .advantages-list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+
+  .advantages-list__item {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    margin-bottom: 30px;
   }
 }
 

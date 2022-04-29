@@ -1,0 +1,46 @@
+.advantages {
+  position: relative;
+  padding: 120px 0;
+  min-height: 562px;
+
+  @include vp-1365 {
+    padding: 100px 0;
+  }
+
+  @include vp-767 {
+    padding: 65px 0;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 60px;
+
+    @include vp-767 {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__back {
+    img {
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      object-position: center center;
+      background-color: $header-background;
+
+      //@include vp-1365 {
+      //  height: 638px;
+      //}
+
+      @include vp-767 {
+        //height: 500px;
+        object-position: center 75%;
+      }
+    }
+  }
+}
+

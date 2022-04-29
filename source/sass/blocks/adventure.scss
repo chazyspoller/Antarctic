@@ -1,6 +1,6 @@
 .adventure {
   padding: 120px 0;
-  background-color: $color-adventure-back;
+  background-color: $color-light-back;
 
   @include vp-1365 {
     padding: 100px 0;
@@ -30,17 +30,10 @@
       }
 
       h3 {
-        @include reset-margins;
-        font: 600 1.75em/1.5em $ff-default;
         margin-bottom: 40px;
 
         @include vp-1365 {
-          font-size: 1.625em;
           margin-bottom: 30px;
-        }
-
-        @include vp-767 {
-          font-size: 1.5em;
         }
       }
 
