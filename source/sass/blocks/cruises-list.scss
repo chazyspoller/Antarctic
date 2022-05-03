@@ -1,0 +1,17 @@
+.criuses-list {
+  @include reset-margins;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  grid-auto-flow: row;
+  gap: 30px;
+
+  @include vp-1365 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+  }
+}

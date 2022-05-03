@@ -1,0 +1,151 @@
+.cruises-item {
+  position: relative;
+  z-index: 2;
+  padding: 35px 25px;
+  min-width: 260px;
+  min-height: 386px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: $color-default-white;
+  overflow: hidden;
+
+  @include vp-1365 {
+    padding: 35px;
+
+    &--nojs {
+      background-color: $color-dark-blue;
+
+      img {
+        display: none;
+      }
+
+      h3 {
+        position: static;
+      }
+
+      dl {
+        opacity: 1;
+      }
+
+      a {
+        opacity: 1;
+      }
+
+      .cruises-item__gradient-effect {
+        z-index: -1;
+      }
+    }
+  }
+
+  @include vp-767 {
+    padding: 35px 25px;
+  }
+
+  h3 {
+    @include reset-margins;
+    position: relative;
+    top: 93%;
+    z-index: 5;
+    margin-bottom: 25px;
+    font: 500 1.125em/1.5em $ff-default;
+  }
+
+  dl {
+    @include reset-margins;
+    opacity: 0;
+    margin-bottom: 15px;
+  }
+
+  dt {
+    font: 500 0.875em/1.2em $ff-default;
+    margin-bottom: 6px;
+  }
+
+  dd {
+    @include reset-margins;
+    font: 400 0.875em/1.2em $ff-default;
+
+    &:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+  }
+
+  a {
+    display: block;
+    opacity: 0;
+    padding: 14px;
+    width: 100%;
+    background-color: $color-light-back;
+    font: 600 0.875em/1em $ff-default;
+    text-align: center;
+    color: $color-dark-blue;
+    transition: background-color 0.3s ease 0s;
+    margin-top: auto;
+
+    @media (hover: hover), screen {
+      &:hover,
+      &:focus {
+        background-color: $color-active;
+      }
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
+  &__photo {
+    img {
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+      object-position: center top;
+      background-color: $header-background;
+
+      @include vp-767 {
+        object-position: center 75%;
+      }
+    }
+  }
+
+  &__gradient-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: $blue-to-transporent;
+  }
+
+  @media (hover: hover), screen and (min-width: $vp-1366) {
+    &:hover {
+      background-color: $color-dark-blue;
+
+      img {
+        display: none;
+      }
+
+      h3 {
+        position: static;
+      }
+
+      dl {
+        opacity: 1;
+      }
+
+      a {
+        opacity: 1;
+      }
+
+      .cruises-item__gradient-effect {
+        z-index: -1;
+      }
+    }
+  }
+}

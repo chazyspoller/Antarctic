@@ -1,5 +1,6 @@
 .advantages-list {
   @include reset-margins;
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -34,12 +35,13 @@
       }
     }
 
-    dt {
+    h3 {
+      @include reset-margins;
       font: 500 1.125em/1.3em $ff-default;
       margin-bottom: 15px;
     }
 
-    dd {
+    p {
       @include reset-margins;
       font: 400 0.875em/1.2em $ff-default;
     }

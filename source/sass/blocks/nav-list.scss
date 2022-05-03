@@ -5,22 +5,6 @@
   flex-wrap: wrap;
   justify-content: flex-end;
 
-  &--nojs {
-    @include vp-767 {
-      display: block;
-      position: relative;
-      width: 100%;
-      height: auto;
-      margin: 20px 0 0;
-      grid-area: nav;
-      padding: 25px;
-
-      &::before {
-        display: none;
-      }
-    }
-  }
-
   @include vp-767 {
     display: none;
     position: absolute;
@@ -48,6 +32,22 @@
       width: 285/320 * 100%;
       height: 70px;
       background-color: $color-default-white;
+    }
+  }
+
+  &--nojs {
+    @include vp-767 {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: auto;
+      margin: 20px 0 0;
+      grid-area: nav;
+      padding: 25px;
+
+      &::before {
+        display: none;
+      }
     }
   }
 
@@ -83,7 +83,7 @@
       border-bottom: 2px solid $color-transparent;
       transition: border-bottom 0.3s ease 0s;
 
-      @media (hover: hover), screen {
+      @media (hover: hover), screen and (min-width: $vp-1366) {
         &:hover,
         &:focus {
           border-bottom: 2px solid $color-default-white;

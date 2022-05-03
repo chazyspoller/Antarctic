@@ -1,5 +1,6 @@
 import { iosVhFix } from './utils/ios-vh-fix';
 import { activateMainNav } from './modules/modals/burger';
+import { openInfoCards } from './modules/modals/cruises-cards';
 
 // ---------------------------------
 
@@ -14,6 +15,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------
 
   activateMainNav();
+  openInfoCards();
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана

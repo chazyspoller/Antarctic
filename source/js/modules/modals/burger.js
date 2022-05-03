@@ -13,6 +13,22 @@ const jsActive = () => {
   mainNav.classList.remove('nav-list--nojs');
 };
 
+const scrollToElement = (evt) => {
+  const id = evt.target.getAttribute('href');
+  const elementToGo = id.length > 1 ? document.querySelector(id) : null;
+
+  if (id.length > 1) {
+    evt.preventDefault();
+  }
+
+  if (elementToGo) {
+    elementToGo.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  }
+};
+
 const closeMainNav = () => {
   if (logoLight && logoDark) {
     logoLight.classList.remove('logo-light--inactive');
@@ -59,9 +75,10 @@ const onLinkClick = () => {
 
 const linksListener = () => {
   if (mainNavLinks.length) {
-    for (let link of mainNavLinks) {
+    mainNavLinks.forEach((link) => {
       link.addEventListener('click', onLinkClick);
-    }
+      link.addEventListener('click', scrollToElement);
+    });
   }
 };
 
