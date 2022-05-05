@@ -62,7 +62,7 @@
 
           <p>Волшебный мир айсбергов&nbsp;и&nbsp;пингвинов</p>
 
-          <picture class="intro__back">
+          <picture class="back-bg">
             <source type="image/webp" media="(max-width: 767px)"
               srcset="img/intro-back-mobile.webp 1x, img/intro-back-mobile@2x.webp 2x">
             <source type="image/webp" media="(max-width: 1365px)"
@@ -83,7 +83,6 @@
       </section>
       <section class="adventure">
         <h2 class="visually-hidden">Описание путешествия</h2>
-
         <div class="container">
           <div class="adventure__wrapper">
             <div class="adventure__title">
@@ -144,7 +143,7 @@
             </li>
           </ul>
 
-          <picture class="advantages__back">
+          <picture class="back-bg">
             <source type="image/webp" media="(max-width: 767px)"
               srcset="img/advantages-back-mobile.webp 1x, img/advantages-back-mobile@2x.webp 2x">
             <source type="image/webp" media="(max-width: 1365px)"
@@ -427,6 +426,106 @@
           </ul>
         </div>
       </section>
+      <section class="booking">
+        <div class="container">
+          <div class="booking__wrapper">
+            <div class="booking__title">
+              <h2>Раннее бронирование</h2>
+              <p>Забронируйте тур за&nbsp;3-6&nbsp;месяцев
+                до&nbsp;даты выезда и&nbsp;сэкономьте до&nbsp;50%</p>
+            </div>
+
+            <form class="booking__form booking-form" action="#" method="GET">
+              <p>Оставьте заявку и&nbsp;мы свяжемся с&nbsp;вами в&nbsp;ближайшее время</p>
+              <input type="text" name="user-name" id="user-name" placeholder="Имя" required>
+              <label class="visually-hidden" for="user-name">Имя</label>
+              <input type="tel" name="user-phone" id="user-phone" placeholder="Телефон" minLength="18"
+                data-phone-pattern required>
+              <label class=" visually-hidden" for="user-phone">Телефон</label>
+              <input type="email" name="user-mail" id="user-mail" placeholder="Email" почта" data-mail required>
+              <label class="visually-hidden" for="user-mail">Телефон</label>
+              <input class="visually-hidden" type="checkbox" name="personal-data" id="personal-data"
+                aria-label="Согласие на обработку персональных данных" data-personal-agree required>
+              <label for="personal-data">
+                <svg width="18" height="18" role="img">
+                  <use xlink:href="img/sprite_auto.svg#icon-input"></use>
+                </svg>
+                Я согласен на&nbsp;обработку моих&nbsp;персональных данных
+              </label>
+              <button type="submit">Оставить заявку</button>
+            </form>
+          </div>
+          <picture class="back-bg">
+            <source type="image/webp" media="(max-width: 767px)"
+              srcset="img/booking-back-mobile.webp 1x, img/booking-back-mobile@2x.webp 2x">
+            <source type="image/webp" media="(max-width: 1365px)"
+              srcset="img/booking-back-tablet.webp 1x, img/booking-back-tablet@2x.webp 2x">
+            <source type="image/webp" srcset="img/booking-back.webp 1x, img/booking-back@2x.webp 2x">
+
+            <!-- 1х: 320px; 2x: 640px -->
+            <source type="image/jpeg" media="(max-width: 767px)"
+              srcset="img/booking-back-mobile.jpg 1x, img/booking-back-mobile@2x.jpg 2x">
+            <!-- 1х: 768px; 2x: 1536px -->
+            <source type="image/jpeg" media="(max-width: 1365px)"
+              srcset="img/booking-back-tablet.jpg 1x, img/booking-back-tablet@2x.jpg 2x">
+            <!-- 1х: 1366px; 2x: 2732px -->
+            <img src="img/booking-back.jpg" srcset="img/booking-back@2x.jpg 2x" alt="Пейзаж Антарктики" width="1366"
+              height="650">
+          </picture>
+        </div>
+      </section>
+      <section class="contacts">
+        <h2 class="visually-hidden">Контакты</h2>
+        <div class="container">
+          <div class="contacts__wrapper">
+            <div class="contacts__map">
+              <h3 class="visually-hidden">
+                Как пройти до нашего офиса - карта
+              </h3>
+              <picture class="back-bg back-bg--map">
+                <source type="image/webp" media="(max-width: 767px)"
+                  srcset="img/map-mobile.webp 1x, img/map-mobile@2x.webp 2x">
+                <source type="image/webp" media="(max-width: 1365px)"
+                  srcset="img/map-tablet.webp 1x, img/map-tablet@2x.webp 2x">
+                <source type="image/webp" srcset="img/map.webp 1x, img/map@2x.webp 2x">
+
+                <!-- 1х: 290px; 2x: 580px -->
+                <source type="image/jpeg" media="(max-width: 767px)"
+                  srcset="img/map-mobile.png 1x, img/map-mobile@2x.png 2x">
+                <!-- 1х: 324px; 2x: 648px -->
+                <source type="image/jpeg" media="(max-width: 1365px)"
+                  srcset="img/map-tablet.png 1x, img/map-tablet@2x.png 2x">
+                <!-- 1х: 560px; 2x: 1120px -->
+                <img src="img/map.png" srcset="img/map@2x.png 2x" alt="Яндекс карта" width="560" height="334">
+              </picture>
+              <svg width="18" height="24" role="img">
+                <use xlink:href="img/sprite_auto.svg#icon-map"></use>
+              </svg>
+              <div id="map">
+
+              </div>
+            </div>
+            <div class="contacts__info">
+              <p>
+                У вас ещё остались вопросы или сомнения?
+                Приезжайте к нам в офис и мы вам все расскажем.
+              </p>
+              <p>
+                <svg width="18" height="24" role="img">
+                  <use xlink:href="img/sprite_auto.svg#icon-map"></use>
+                </svg>
+                г. Санкт Петербург, ул. Большая Конюшенная, 19/8
+              </p>
+              <p>
+                <svg width="18" height="19" role="img">
+                  <use xlink:href="img/sprite_auto.svg#icon-phone"></use>
+                </svg>
+                <a href="tel:88002000000">8-800-200-00-00</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <footer class="footer">
       <div class="container">
@@ -470,6 +569,8 @@
     </footer>
   </div>
 
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=fbaa8df7-4e1b-4f11-be2b-ed7e0598ae21"
+    type="text/javascript"></script>
   <script src="js/main.min.js"></script>
 </body>
 

@@ -786,6 +786,24 @@ button,
   display: none;
 }
 
+.back-bg img {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center center;
+  object-position: center center;
+  background-color: #D7E4F3;
+}
+
+.back-bg--map img {
+  z-index: 0;
+}
+
 .title {
   margin: 0;
   padding: 0;
@@ -906,20 +924,6 @@ button,
   z-index: 3;
 }
 
-.intro__back img {
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  -o-object-fit: cover;
-  object-fit: cover;
-  -o-object-position: center center;
-  object-position: center center;
-  background-color: #D7E4F3;
-}
-
 .intro h1 {
   margin: 0;
   padding: 0;
@@ -986,20 +990,6 @@ button,
 .advantages h2 {
   text-align: center;
   margin-bottom: 60px;
-}
-
-.advantages__back img {
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  -o-object-fit: cover;
-  object-fit: cover;
-  -o-object-position: center center;
-  object-position: center center;
-  background-color: #D7E4F3;
 }
 
 .advantages-list {
@@ -1162,6 +1152,232 @@ button,
   background: linear-gradient(180deg, rgba(1, 28, 64, 0) 50%, #011C40 100%);
 }
 
+.booking {
+  padding: 50px 60px;
+  position: relative;
+}
+
+.booking__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.booking__title {
+  color: #011C40;
+  width: 50%;
+}
+
+.booking__title h2 {
+  margin: 0;
+  padding: 0;
+  font: 700 2.5em/1.5em "Montserrat", "Arial", sans-serif;
+  margin-bottom: 30px;
+}
+
+.booking__title p {
+  margin: 0;
+  padding: 0;
+  font: 400 1.125em/1.5em "Montserrat", "Arial", sans-serif;
+  padding-right: 30%;
+}
+
+.booking-form {
+  padding: 50px;
+  width: 38.2%;
+  background-color: #011C40;
+  -webkit-box-shadow: 0px 4px 45px rgba(1, 28, 64, 0.15);
+  box-shadow: 0px 4px 45px rgba(1, 28, 64, 0.15);
+}
+
+.booking-form p {
+  margin: 0;
+  padding: 0;
+  font: 500 1.125em/1.5em "Montserrat", "Arial", sans-serif;
+  color: #F9FBFD;
+  margin-bottom: 35px;
+}
+
+.booking-form input:not(input[type="checkbox"]) {
+  border: none;
+  display: block;
+  padding: 11px 16px;
+  width: 100%;
+  background-color: #F9FBFD;
+  font: 400 1.3em/1.5em "Montserrat", "Arial", sans-serif;
+  color: #011C40;
+  -webkit-transition: background-color 0.3s ease 0s;
+  -o-transition: background-color 0.3s ease 0s;
+  transition: background-color 0.3s ease 0s;
+  margin-bottom: 20px;
+}
+
+.booking-form input:not(input[type="checkbox"])::-webkit-input-placeholder {
+  color: rgba(1, 28, 64, 0.7);
+}
+
+.booking-form input:not(input[type="checkbox"])::-moz-placeholder {
+  color: rgba(1, 28, 64, 0.7);
+}
+
+.booking-form input:not(input[type="checkbox"]):-ms-input-placeholder {
+  color: rgba(1, 28, 64, 0.7);
+}
+
+.booking-form input:not(input[type="checkbox"])::-ms-input-placeholder {
+  color: rgba(1, 28, 64, 0.7);
+}
+
+.booking-form input:not(input[type="checkbox"])::placeholder {
+  color: rgba(1, 28, 64, 0.7);
+}
+
+.booking-form input:not(input[type="checkbox"]):focus {
+  outline: 2px solid #86daed;
+}
+
+.booking-form button {
+  border: none;
+  padding: 16px;
+  width: 100%;
+  background-color: #F9FBFD;
+  font: 600 0.875em/1.2em "Montserrat", "Arial", sans-serif;
+  color: #011C40;
+}
+
+.booking-form button:active {
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+}
+
+.booking-form label[for="personal-data"] {
+  display: inline-block;
+  color: #F9FBFD;
+  font: 400 0.625em/1em "Montserrat", "Arial", sans-serif;
+  padding-left: 23px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.booking-form label[for="personal-data"]::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background-color: #F9FBFD;
+}
+
+.booking-form label[for="personal-data"] svg {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  fill: none;
+  display: none;
+}
+
+.booking-form input[type="checkbox"]:checked + label > svg {
+  display: block;
+}
+
+.booking-form input[type="checkbox"]:focus + label::before {
+  background-color: #86daed;
+}
+
+.booking-form .input--error {
+  outline: 2px solid #ff1553;
+}
+
+.booking-form .input--error:focus {
+  outline: 2px solid #ff1553;
+}
+
+.contacts {
+  padding: 120px 0 92px;
+  background-color: #F9FBFD;
+}
+
+.contacts__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.contacts__info {
+  width: 40.2%;
+}
+
+.contacts__info p {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font: 400 1em/1.2em "Montserrat", "Arial", sans-serif;
+  color: #011C40;
+  margin-bottom: 35px;
+}
+
+.contacts__info p:first-of-type {
+  font: 500 1.125em/1.5em "Montserrat", "Arial", sans-serif;
+}
+
+.contacts__info p:not(:first-of-type) {
+  padding-left: 28px;
+}
+
+.contacts__info svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.contacts__info a {
+  color: #011C40;
+}
+
+.contacts__info a:active {
+  opacity: 0.5;
+}
+
+.contacts__map {
+  position: relative;
+  width: 45.5%;
+  height: 334px;
+}
+
+.contacts__map svg {
+  position: absolute;
+  bottom: 70px;
+  right: 55%;
+}
+
+.contacts__map div {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
 /* @media (hover: hover), screen and (min-width: 0\0) {
   &:hover,
   &:focus {
@@ -1178,6 +1394,12 @@ button,
 
   .footer-list__item a:hover,
   .footer-list__item a:focus {
+    opacity: 0.6;
+    outline: none;
+  }
+
+  .social-list__item a:hover,
+  .social-list__item a:focus {
     opacity: 0.6;
     outline: none;
   }
@@ -1204,6 +1426,24 @@ button,
 
   .cruises-item:hover .cruises-item__gradient-effect {
     z-index: -1;
+  }
+
+  .booking-form input:not(input[type="checkbox"]):hover {
+    outline: 2px solid #86daed;
+  }
+
+  .booking-form button:hover,
+  .booking-form button:focus {
+    background-color: #86daed;
+  }
+
+  .booking-form label[for="personal-data"]:hover {
+    color: #86daed;
+  }
+
+  .contacts__info a:hover,
+  .contacts__info a:focus {
+    color: #86daed;
   }
 }
 
@@ -1329,6 +1569,52 @@ button,
   .cruises-item--nojs .cruises-item__gradient-effect {
     z-index: -1;
   }
+
+  .booking {
+    padding: 100px 0;
+  }
+
+  .booking__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+
+  .booking__title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .booking__title h2 {
+    font-size: 2.125em;
+    margin-bottom: 0;
+  }
+
+  .booking__title p {
+    padding: 0 22%;
+  }
+
+  .booking-form {
+    width: 59.5%;
+  }
+
+  .contacts {
+    padding: 100px 0;
+  }
+
+  .contacts__info {
+    width: 48%;
+  }
+
+  .contacts__map {
+    width: 48%;
+    height: 335px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -1452,6 +1738,11 @@ button,
     z-index: 10;
   }
 
+  .back-bg img {
+    -o-object-position: center 75%;
+    object-position: center 75%;
+  }
+
   .title {
     font-size: 1.5em;
   }
@@ -1504,11 +1795,6 @@ button,
     min-height: 500px;
   }
 
-  .intro__back img {
-    -o-object-position: center 75%;
-    object-position: center 75%;
-  }
-
   .intro h1 {
     font-size: 2.25em;
     line-height: 1.25em;
@@ -1558,11 +1844,6 @@ button,
     margin-bottom: 40px;
   }
 
-  .advantages__back img {
-    -o-object-position: center 75%;
-    object-position: center 75%;
-  }
-
   .advantages-list {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1597,15 +1878,74 @@ button,
     -o-object-position: center 75%;
     object-position: center 75%;
   }
+
+  .booking {
+    padding: 65px 0;
+  }
+
+  .booking__title {
+    margin-bottom: 40px;
+  }
+
+  .booking__title h2 {
+    font-size: 1.5em;
+    margin-bottom: 25px;
+  }
+
+  .booking__title p {
+    font-size: 1em;
+    padding: 0;
+  }
+
+  .booking-form {
+    padding: 40px 38px;
+    width: 100%;
+  }
+
+  .booking-form p {
+    text-align: center;
+  }
+
+  .booking-form label[for="personal-data"] {
+    padding-left: 25px;
+  }
+
+  .booking-form label[for="personal-data"]::before {
+    width: 20px;
+    height: 20px;
+  }
+
+  .booking-form label[for="personal-data"] svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .contacts {
+    padding: 65px 0;
+  }
+
+  .contacts__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+
+  .contacts__info {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .contacts__map {
+    width: 100%;
+    height: 316px;
+  }
 }
 
 @media (hover: hover), screen {
-  .social-list__item a:hover,
-  .social-list__item a:focus {
-    opacity: 0.6;
-    outline: none;
-  }
-
   .cruises-item a:hover,
   .cruises-item a:focus {
     background-color: #86daed;
