@@ -5,6 +5,7 @@ const activeJS = () => {
 };
 
 const onCardClick = (evt) => {
+  evt.preventDefault();
   const cardInfo = evt.target.closest('.cruises-item');
 
   if (cardInfo) {
@@ -13,7 +14,7 @@ const onCardClick = (evt) => {
 };
 
 const openInfoCards = () => {
-  if (cruisesCards) {
+  if (cruisesCards.length) {
     activeJS();
     cruisesCards.forEach((card) => {
       card.addEventListener('click', onCardClick);
@@ -21,4 +22,4 @@ const openInfoCards = () => {
   }
 };
 
-export { openInfoCards };
+export {openInfoCards};

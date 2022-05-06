@@ -1,9 +1,9 @@
 .intro {
-  color: $color-default-white;
-  text-shadow: 0px 4px 4px rgba($color-default-black, 0.25);
+  color: $color-light-back;
+  text-shadow: 0 4px 4px $color-box-shadow;
   min-height: 650px;
   padding: 162px + 108px 95/1160 * 100% 20px;
-  box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 4px 0 $color-box-shadow;
   position: relative;
   z-index: 3;
 
@@ -19,11 +19,11 @@
 
   h1 {
     @include reset-margins;
-    font: 700 3.375em/1.2em $ff-default;
+    font: 700 3.38em/1.2em $ff-default;
     margin-bottom: 15px;
 
     @include vp-1365 {
-      font-size: 3.125em;
+      font-size: 3.13em;
     }
 
     @include vp-767 {
@@ -38,7 +38,7 @@
     font: 400 1.25em/1.2em $ff-default;
 
     @include vp-1365 {
-      font-size: 1.125em;
+      font-size: 1.13em;
     }
 
     @include vp-767 {

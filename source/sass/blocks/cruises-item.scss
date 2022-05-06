@@ -1,35 +1,35 @@
 .cruises-item {
   position: relative;
   z-index: 2;
-  padding: 35px 25px;
+  padding: 30px 25px 32px 25px;
   min-width: 260px;
   min-height: 386px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  color: $color-default-white;
+  color: $color-light-back;
   overflow: hidden;
+  background-color: $color-dark-blue;
 
   @include vp-1365 {
-    padding: 35px;
+    padding: 28px 35px 35px;
 
     &--nojs {
-      background-color: $color-dark-blue;
-
       img {
         display: none;
       }
 
       h3 {
         position: static;
+        order: 0;
       }
 
       dl {
-        opacity: 1;
+        z-index: 10;
       }
 
       a {
-        opacity: 1;
+        z-index: 10;
       }
 
       .cruises-item__gradient-effect {
@@ -39,91 +39,79 @@
   }
 
   @include vp-767 {
-    padding: 35px 25px;
+    padding: 25px 25px 35px;
   }
 
   h3 {
     @include reset-margins;
     position: relative;
-    top: 93%;
+    top: 25px;
+    left: 7px;
+    order: 3;
     z-index: 5;
-    margin-bottom: 25px;
-    font: 500 1.125em/1.5em $ff-default;
+    margin-bottom: 15px;
+    font: 500 1.13em/1.5em $ff-default;
+
+    @include vp-1365 {
+      top: 22px;
+      left: 3px;
+    }
+
+    @include vp-767 {
+      top: 28px;
+    }
   }
 
   dl {
     @include reset-margins;
-    opacity: 0;
-    margin-bottom: 15px;
+    z-index: -1;
   }
 
   dt {
-    font: 500 0.875em/1.2em $ff-default;
-    margin-bottom: 6px;
+    font: 500 0.88em/1.3em $ff-default;
+    margin-bottom: 2px;
   }
 
   dd {
     @include reset-margins;
-    font: 400 0.875em/1.2em $ff-default;
+    font: 400 0.88em/1.4em $ff-default;
 
     &:not(:last-of-type) {
-      margin-bottom: 10px;
+      margin-bottom: 11px;
     }
   }
 
   a {
+    position: relative;
+    order: 2;
+    z-index: -2;
     display: block;
-    opacity: 0;
     padding: 14px;
     width: 100%;
     background-color: $color-light-back;
-    font: 600 0.875em/1em $ff-default;
+    font: 600 0.88em/1em $ff-default;
     text-align: center;
     color: $color-dark-blue;
     transition: background-color 0.3s ease 0s;
     margin-top: auto;
 
     @media (hover: hover), screen {
-      &:hover,
-      &:focus {
+      &:hover {
         background-color: $color-active;
       }
     }
 
+    &:focus {
+      background-color: $color-active;
+      outline: none;
+    }
+
     &:active {
-      opacity: 0.5;
+      transform: scale(0.95);
     }
   }
 
-  &__photo {
-    img {
-      position: absolute;
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      object-fit: cover;
-      object-position: center top;
-      background-color: $header-background;
-
-      @include vp-767 {
-        object-position: center 75%;
-      }
-    }
-  }
-
-  &__gradient-effect {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    background: $blue-to-transporent;
-  }
-
-  @media (hover: hover), screen and (min-width: $vp-1366) {
+  @media (hover: hover), screen {
     &:hover {
       background-color: $color-dark-blue;
 
@@ -133,19 +121,69 @@
 
       h3 {
         position: static;
+        order: 0;
       }
 
       dl {
-        opacity: 1;
+        z-index: 10;
       }
 
       a {
-        opacity: 1;
+        z-index: 10;
       }
 
       .cruises-item__gradient-effect {
         z-index: -1;
       }
     }
+  }
+}
+
+.cruises-item__photo {
+  img {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center top;
+    background-color: $header-background;
+
+    @include vp-767 {
+      object-position: center 75%;
+    }
+  }
+}
+
+.cruises-item__gradient-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: $blue-to-transporent;
+}
+
+.cruises-item a[data-card="link"]:focus {
+  z-index: 10;
+
+  & ~ picture img {
+    display: none;
+  }
+
+  & ~ h3 {
+    position: static;
+    order: 0;
+  }
+
+  & ~ dl {
+    z-index: 10;
+  }
+
+  & ~ .cruises-item__gradient-effect {
+    display: none;
   }
 }

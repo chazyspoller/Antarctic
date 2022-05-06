@@ -2,25 +2,29 @@
   padding: 50px 0;
   background-color: $color-dark-blue;
 
+  @include vp-1365 {
+    padding: 45px 0;
+  }
+
   @include vp-767 {
     padding: 40px 0;
   }
-
-  &__nav {
-    display: grid;
-    grid-template-columns: min-content 1fr minmax(106px, 20%);
-    column-gap: 40px;
-    align-items: center;
-
-    @include vp-1365 {
-      column-gap: 25px;
-    }
-
-    @include vp-767 {
-      grid-template-columns: 1fr;
-      column-gap: 0;
-      row-gap: 30px;
-    }
-  }
 }
 
+.footer__nav {
+  display: grid;
+  grid-template-columns: min-content 1fr minmax(106px, 20%);
+  column-gap: 40px;
+  align-items: center;
+
+  @include vp-1365 {
+    column-gap: 25px;
+    grid-template-columns: min-content 1fr minmax(106px, 18%);
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 22px;
+  }
+}

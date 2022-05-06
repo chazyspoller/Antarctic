@@ -17,7 +17,7 @@
     display: block;
     width: 100%;
     height: 2px;
-    background-color: $color-default-white;
+    background-color: $color-light-back;
   }
 
   &::before,
@@ -27,7 +27,7 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: $color-default-white;
+    background-color: $color-light-back;
     transition: transform 0.3s ease 0s;
   }
 
@@ -46,7 +46,7 @@
 
     &::before,
     &::after {
-      width: 20px;
+      width: 18px;
       border-radius: 0;
       top: 6px;
       left: 1px;

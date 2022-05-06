@@ -10,9 +10,9 @@
       "logo burger"
       "nav nav";
   }
+}
 
-  &__burger {
-    grid-area: burger;
-    justify-self: end;
-  }
+.main-nav__burger {
+  grid-area: burger;
+  justify-self: end;
 }

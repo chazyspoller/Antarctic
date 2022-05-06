@@ -3,6 +3,8 @@ const phoneField = form.querySelector('[data-phone-pattern]');
 const mailField = form.querySelector('[data-mail]');
 const nameField = form.querySelector('input[type="text"]');
 
+const checkExist = phoneField && mailField && nameField;
+
 let isStorageSupport = true;
 let storagePhone = '';
 let storageMail = '';
@@ -28,7 +30,6 @@ const checkPhoneMask = (evt) => {
 
   if (clearVal !== 'false' && evt.type === 'blur') {
     if (val.length < matrix.match(/([\_\d])/g).length) {
-      //evt.target.value = '';
       evt.target.classList.add('input--error');
       return;
     }
@@ -65,22 +66,24 @@ const checkEmailField = (evt) => {
 };
 
 const activateValid = () => {
-  mailField.addEventListener('input', checkEmailField);
+  if (checkExist || mailField) {
+    mailField.addEventListener('input', checkEmailField);
 
-  if (storagePhone) {
-    phoneField.value = storagePhone;
-  } else {
-    phoneField.value = '';
-  }
-  if (storageName) {
-    nameField.value = storageName;
-  }
-  if (storageMail) {
-    mailField.value = storageMail;
+    if (storagePhone) {
+      phoneField.value = storagePhone;
+    } else {
+      phoneField.value = '';
+    }
+    if (storageName) {
+      nameField.value = storageName;
+    }
+    if (storageMail) {
+      mailField.value = storageMail;
+    }
   }
 };
 
-const submitForm = () => {
+const useLocalStorage = () => {
   if (isStorageSupport) {
     localStorage.setItem('user-name', nameField.value);
     localStorage.setItem('user-phone', phoneField.value);
@@ -88,6 +91,14 @@ const submitForm = () => {
   }
 };
 
-activateValid();
-form.addEventListener('submit', submitForm);
-document.addEventListener('DOMContentLoaded', activatePhoneMask);
+if (phoneField) {
+  document.addEventListener('DOMContentLoaded', activatePhoneMask);
+}
+
+const addListenersForForm = () => {
+  activateValid();
+
+  form.addEventListener('submit', useLocalStorage);
+};
+
+export {addListenersForForm};

@@ -435,8 +435,8 @@ html {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
-  font-family: "Placeholder", "Arial", sans-serif;
-  color: #000000;
+  font-family: "Montserrat", "Arial", sans-serif;
+  color: #011c40;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -569,8 +569,6 @@ button,
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 100vh;
-  /* stylelint-disable-next-line */
-  min-height: calc(100 * var(--vh, 1vh));
 }
 
 .wrapper .header,
@@ -583,14 +581,6 @@ button,
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-}
-
-.rouble {
-  font-family: "Rouble", "Arial", sans-serif;
-  /* stylelint-disable */
-  text-transform: lowercase !important;
-  font-weight: 400 !important;
-  /* stylelint-enable */
 }
 
 .visually-hidden {
@@ -625,11 +615,12 @@ button,
   display: none;
 }
 
-.no-transition {
-  /* stylelint-disable-next-line */
-  -webkit-transition: none !important;
-  -o-transition: none !important;
-  transition: none !important;
+.input--error {
+  outline: 2px solid #ff1553;
+}
+
+.input--error:focus {
+  outline: 2px solid #ff1553;
 }
 
 .container {
@@ -637,6 +628,110 @@ button,
   max-width: 1920px;
   margin: 0 auto;
   padding: 0 7.54026%;
+}
+
+.burger {
+  margin: 0;
+  padding: 0;
+  width: 24px;
+  height: 14px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+  display: none;
+}
+
+.burger:active {
+  opacity: 0.3;
+}
+
+.burger > span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #f9fbfd;
+}
+
+.burger::before,
+.burger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #f9fbfd;
+  -webkit-transition: -webkit-transform 0.3s ease 0s;
+  transition: -webkit-transform 0.3s ease 0s;
+  -o-transition: transform 0.3s ease 0s;
+  transition: transform 0.3s ease 0s;
+  transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
+}
+
+.burger::before {
+  top: 0;
+}
+
+.burger::after {
+  bottom: 0;
+}
+
+.burger--close > span {
+  opacity: 0;
+}
+
+.burger--close::before,
+.burger--close::after {
+  width: 18px;
+  border-radius: 0;
+  top: 6px;
+  left: 1px;
+  background-color: #011c40;
+}
+
+.burger--close::after {
+  bottom: auto;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.burger--close::before {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.checkbox {
+  padding-left: 23px;
+  position: relative;
+}
+
+.checkbox::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background-color: #f9fbfd;
+}
+
+.checkbox svg {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  fill: none;
+  display: none;
 }
 
 .header {
@@ -689,7 +784,7 @@ button,
 }
 
 .nav-list__item a {
-  color: #ffffff;
+  color: #f9fbfd;
   display: inline-block;
   padding: 5px;
   border-bottom: 2px solid rgba(255, 255, 255, 0);
@@ -700,79 +795,6 @@ button,
 
 .nav-list__item a:active {
   color: #86daed;
-}
-
-.burger {
-  margin: 0;
-  padding: 0;
-  width: 24px;
-  height: 14px;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  position: relative;
-  z-index: 10;
-  display: none;
-}
-
-.burger:active {
-  opacity: 0.3;
-}
-
-.burger > span {
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: #ffffff;
-}
-
-.burger::before,
-.burger::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #ffffff;
-  -webkit-transition: -webkit-transform 0.3s ease 0s;
-  transition: -webkit-transform 0.3s ease 0s;
-  -o-transition: transform 0.3s ease 0s;
-  transition: transform 0.3s ease 0s;
-  transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
-}
-
-.burger::before {
-  top: 0;
-}
-
-.burger::after {
-  bottom: 0;
-}
-
-.burger--close > span {
-  opacity: 0;
-}
-
-.burger--close::before,
-.burger--close::after {
-  width: 20px;
-  border-radius: 0;
-  top: 6px;
-  left: 1px;
-  background-color: #011C40;
-}
-
-.burger--close::after {
-  bottom: auto;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-.burger--close::before {
-  -webkit-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
 }
 
 .logo {
@@ -797,7 +819,7 @@ button,
   object-fit: cover;
   -o-object-position: center center;
   object-position: center center;
-  background-color: #D7E4F3;
+  background-color: #d7e4f3;
 }
 
 .back-bg--map img {
@@ -809,12 +831,12 @@ button,
   padding: 0;
   font: 600 1.75em/1.5em "Montserrat", "Arial", sans-serif;
   margin-bottom: 40px;
-  color: #011C40;
+  color: #011c40;
 }
 
 .footer {
   padding: 50px 0;
-  background-color: #011C40;
+  background-color: #011c40;
 }
 
 .footer__nav {
@@ -856,7 +878,7 @@ button,
 }
 
 .footer-list__item a {
-  color: #ffffff;
+  color: #f9fbfd;
   -webkit-transition: opacity 0.3s ease 0s;
   -o-transition: opacity 0.3s ease 0s;
   transition: opacity 0.3s ease 0s;
@@ -881,7 +903,7 @@ button,
 }
 
 .social-list__item:not(:first-child) {
-  margin-left: 15px;
+  margin-left: 13px;
 }
 
 .social-list__item a {
@@ -910,16 +932,16 @@ button,
 .social-list__item svg {
   width: 20px;
   height: 20px;
-  fill: #ffffff;
+  fill: #f9fbfd;
 }
 
 .intro {
-  color: #ffffff;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #f9fbfd;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   min-height: 650px;
   padding: 270px 8.18966% 20px;
-  -webkit-box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.25);
-  box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   position: relative;
   z-index: 3;
 }
@@ -927,7 +949,7 @@ button,
 .intro h1 {
   margin: 0;
   padding: 0;
-  font: 700 3.375em/1.2em "Montserrat", "Arial", sans-serif;
+  font: 700 3.38em/1.2em "Montserrat", "Arial", sans-serif;
   margin-bottom: 15px;
 }
 
@@ -939,7 +961,7 @@ button,
 
 .adventure {
   padding: 120px 0;
-  background-color: #F9FBFD;
+  background-color: #f9fbfd;
 }
 
 .adventure__wrapper {
@@ -956,14 +978,16 @@ button,
 
 .adventure__title {
   max-width: 45%;
-  color: #011C40;
+  color: #011c40;
 }
 
 .adventure__title h3 {
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 }
 
 .adventure__title p {
+  margin: 0;
+  padding: 0;
   font: 400 1em/1.5em "Montserrat", "Arial", sans-serif;
 }
 
@@ -974,7 +998,7 @@ button,
 .adventure__photo img {
   width: 100%;
   height: 301px;
-  background-color: #D7E4F3;
+  background-color: #d7e4f3;
   -o-object-fit: cover;
   object-fit: cover;
   -o-object-position: center top;
@@ -983,13 +1007,13 @@ button,
 
 .advantages {
   position: relative;
-  padding: 120px 0;
+  padding: 110px 0;
   min-height: 562px;
 }
 
 .advantages h2 {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
 .advantages-list {
@@ -1008,38 +1032,37 @@ button,
 
 .advantages-list__item {
   margin-bottom: 10px;
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 31%;
-  flex: 0 0 31%;
-  padding: 30px;
-  background-color: #F9FBFD;
-  color: #011C40;
+  width: 31%;
+  padding: 30px 30px 26px;
+  background-color: #f9fbfd;
+  color: #011c40;
 }
 
 .advantages-list__item svg {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .advantages-list__item h3 {
   margin: 0;
   padding: 0;
-  font: 500 1.125em/1.3em "Montserrat", "Arial", sans-serif;
-  margin-bottom: 15px;
+  font: 500 1.13em/1.3em "Montserrat", "Arial", sans-serif;
+  margin-bottom: 12px;
 }
 
 .advantages-list__item p {
   margin: 0;
   padding: 0;
-  font: 400 0.875em/1.2em "Montserrat", "Arial", sans-serif;
+  font: 400 0.88em/1.4em "Montserrat", "Arial", sans-serif;
 }
 
 .cruises {
-  padding: 120px 15px;
-  background-color: #F9FBFD;
+  padding: 110px 15px 120px;
+  background-color: #f9fbfd;
 }
 
 .cruises h2 {
   text-align: center;
+  margin-bottom: 48px;
 }
 
 .criuses-list {
@@ -1058,7 +1081,7 @@ button,
 .cruises-item {
   position: relative;
   z-index: 2;
-  padding: 35px 25px;
+  padding: 30px 25px 32px 25px;
   min-width: 260px;
   min-height: 386px;
   display: -webkit-box;
@@ -1071,59 +1094,74 @@ button,
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  color: #ffffff;
+  color: #f9fbfd;
   overflow: hidden;
+  background-color: #011c40;
 }
 
 .cruises-item h3 {
   margin: 0;
   padding: 0;
   position: relative;
-  top: 93%;
+  top: 25px;
+  left: 7px;
+  -webkit-box-ordinal-group: 4;
+  -ms-flex-order: 3;
+  order: 3;
   z-index: 5;
-  margin-bottom: 25px;
-  font: 500 1.125em/1.5em "Montserrat", "Arial", sans-serif;
+  margin-bottom: 15px;
+  font: 500 1.13em/1.5em "Montserrat", "Arial", sans-serif;
 }
 
 .cruises-item dl {
   margin: 0;
   padding: 0;
-  opacity: 0;
-  margin-bottom: 15px;
+  z-index: -1;
 }
 
 .cruises-item dt {
-  font: 500 0.875em/1.2em "Montserrat", "Arial", sans-serif;
-  margin-bottom: 6px;
+  font: 500 0.88em/1.3em "Montserrat", "Arial", sans-serif;
+  margin-bottom: 2px;
 }
 
 .cruises-item dd {
   margin: 0;
   padding: 0;
-  font: 400 0.875em/1.2em "Montserrat", "Arial", sans-serif;
+  font: 400 0.88em/1.4em "Montserrat", "Arial", sans-serif;
 }
 
 .cruises-item dd:not(:last-of-type) {
-  margin-bottom: 10px;
+  margin-bottom: 11px;
 }
 
 .cruises-item a {
+  position: relative;
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+  order: 2;
+  z-index: -2;
   display: block;
-  opacity: 0;
   padding: 14px;
   width: 100%;
-  background-color: #F9FBFD;
-  font: 600 0.875em/1em "Montserrat", "Arial", sans-serif;
+  background-color: #f9fbfd;
+  font: 600 0.88em/1em "Montserrat", "Arial", sans-serif;
   text-align: center;
-  color: #011C40;
+  color: #011c40;
   -webkit-transition: background-color 0.3s ease 0s;
   -o-transition: background-color 0.3s ease 0s;
   transition: background-color 0.3s ease 0s;
   margin-top: auto;
 }
 
+.cruises-item a:focus {
+  background-color: #86daed;
+  outline: none;
+}
+
 .cruises-item a:active {
-  opacity: 0.5;
+  -webkit-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 .cruises-item__photo img {
@@ -1137,7 +1175,7 @@ button,
   object-fit: cover;
   -o-object-position: center top;
   object-position: center top;
-  background-color: #D7E4F3;
+  background-color: #d7e4f3;
 }
 
 .cruises-item__gradient-effect {
@@ -1147,13 +1185,36 @@ button,
   width: 100%;
   height: 100%;
   z-index: 2;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(1, 28, 64, 0)), to(#011C40));
-  background: -o-linear-gradient(top, rgba(1, 28, 64, 0) 50%, #011C40 100%);
-  background: linear-gradient(180deg, rgba(1, 28, 64, 0) 50%, #011C40 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(1, 28, 64, 0)), to(#011c40));
+  background: -o-linear-gradient(top, rgba(1, 28, 64, 0) 50%, #011c40 100%);
+  background: linear-gradient(180deg, rgba(1, 28, 64, 0) 50%, #011c40 100%);
+}
+
+.cruises-item a[data-card="link"]:focus {
+  z-index: 10;
+}
+
+.cruises-item a[data-card="link"]:focus ~ picture img {
+  display: none;
+}
+
+.cruises-item a[data-card="link"]:focus ~ h3 {
+  position: static;
+  -webkit-box-ordinal-group: 1;
+  -ms-flex-order: 0;
+  order: 0;
+}
+
+.cruises-item a[data-card="link"]:focus ~ dl {
+  z-index: 10;
+}
+
+.cruises-item a[data-card="link"]:focus ~ .cruises-item__gradient-effect {
+  display: none;
 }
 
 .booking {
-  padding: 50px 60px;
+  padding: 50px 70px;
   position: relative;
 }
 
@@ -1170,38 +1231,38 @@ button,
 }
 
 .booking__title {
-  color: #011C40;
+  color: #011c40;
   width: 50%;
 }
 
 .booking__title h2 {
   margin: 0;
   padding: 0;
-  font: 700 2.5em/1.5em "Montserrat", "Arial", sans-serif;
-  margin-bottom: 30px;
+  font: 700 2.5em/1.2em "Montserrat", "Arial", sans-serif;
+  margin-bottom: 15px;
 }
 
 .booking__title p {
   margin: 0;
   padding: 0;
-  font: 400 1.125em/1.5em "Montserrat", "Arial", sans-serif;
+  font: 400 1.13em/1.5em "Montserrat", "Arial", sans-serif;
   padding-right: 30%;
 }
 
 .booking-form {
-  padding: 50px;
-  width: 38.2%;
-  background-color: #011C40;
-  -webkit-box-shadow: 0px 4px 45px rgba(1, 28, 64, 0.15);
-  box-shadow: 0px 4px 45px rgba(1, 28, 64, 0.15);
+  padding: 45px 49px 48px;
+  width: 38.8%;
+  background-color: #011c40;
+  -webkit-box-shadow: 0 4px 45px rgba(1, 28, 64, 0.15);
+  box-shadow: 0 4px 45px rgba(1, 28, 64, 0.15);
 }
 
 .booking-form p {
   margin: 0;
   padding: 0;
-  font: 500 1.125em/1.5em "Montserrat", "Arial", sans-serif;
-  color: #F9FBFD;
-  margin-bottom: 35px;
+  font: 500 1.13em/1.5em "Montserrat", "Arial", sans-serif;
+  color: #f9fbfd;
+  margin-bottom: 26px;
 }
 
 .booking-form input:not(input[type="checkbox"]) {
@@ -1209,9 +1270,9 @@ button,
   display: block;
   padding: 11px 16px;
   width: 100%;
-  background-color: #F9FBFD;
-  font: 400 1.3em/1.5em "Montserrat", "Arial", sans-serif;
-  color: #011C40;
+  background-color: #f9fbfd;
+  font: 400 0.88em/1.5em "Montserrat", "Arial", sans-serif;
+  color: #011c40;
   -webkit-transition: background-color 0.3s ease 0s;
   -o-transition: background-color 0.3s ease 0s;
   transition: background-color 0.3s ease 0s;
@@ -1244,11 +1305,15 @@ button,
 
 .booking-form button {
   border: none;
-  padding: 16px;
+  padding: 15px;
   width: 100%;
-  background-color: #F9FBFD;
-  font: 600 0.875em/1.2em "Montserrat", "Arial", sans-serif;
-  color: #011C40;
+  background-color: #f9fbfd;
+  font: 600 0.88em/1em "Montserrat", "Arial", sans-serif;
+  color: #011c40;
+}
+
+.booking-form button:focus {
+  background-color: #86daed;
 }
 
 .booking-form button:active {
@@ -1259,37 +1324,9 @@ button,
 
 .booking-form label[for="personal-data"] {
   display: inline-block;
-  color: #F9FBFD;
-  font: 400 0.625em/1em "Montserrat", "Arial", sans-serif;
-  padding-left: 23px;
+  color: #f9fbfd;
+  font: 400 0.63em/1em "Montserrat", "Arial", sans-serif;
   margin-bottom: 30px;
-  position: relative;
-}
-
-.booking-form label[for="personal-data"]::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  width: 18px;
-  height: 18px;
-  background-color: #F9FBFD;
-}
-
-.booking-form label[for="personal-data"] svg {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  width: 18px;
-  height: 18px;
-  fill: none;
-  display: none;
 }
 
 .booking-form input[type="checkbox"]:checked + label > svg {
@@ -1300,17 +1337,9 @@ button,
   background-color: #86daed;
 }
 
-.booking-form .input--error {
-  outline: 2px solid #ff1553;
-}
-
-.booking-form .input--error:focus {
-  outline: 2px solid #ff1553;
-}
-
 .contacts {
   padding: 120px 0 92px;
-  background-color: #F9FBFD;
+  background-color: #f9fbfd;
 }
 
 .contacts__wrapper {
@@ -1326,7 +1355,8 @@ button,
 }
 
 .contacts__info {
-  width: 40.2%;
+  width: 43%;
+  padding-bottom: 30px;
 }
 
 .contacts__info p {
@@ -1334,35 +1364,42 @@ button,
   padding: 0;
   position: relative;
   font: 400 1em/1.2em "Montserrat", "Arial", sans-serif;
-  color: #011C40;
-  margin-bottom: 35px;
+  color: #011c40;
 }
 
 .contacts__info p:first-of-type {
-  font: 500 1.125em/1.5em "Montserrat", "Arial", sans-serif;
+  font: 500 1.13em/1.5em "Montserrat", "Arial", sans-serif;
 }
 
 .contacts__info p:not(:first-of-type) {
   padding-left: 28px;
 }
 
+.contacts__info p:not(:last-of-type) {
+  margin-bottom: 30px;
+}
+
 .contacts__info svg {
   position: absolute;
-  top: 0;
+  top: 1px;
   left: 0;
 }
 
 .contacts__info a {
-  color: #011C40;
+  color: #011c40;
 }
 
 .contacts__info a:active {
   opacity: 0.5;
 }
 
+.contacts__address svg {
+  top: 0;
+}
+
 .contacts__map {
   position: relative;
-  width: 45.5%;
+  width: 48.2%;
   height: 334px;
 }
 
@@ -1388,7 +1425,7 @@ button,
 @media (hover: hover), screen and (min-width: 1366px) {
   .nav-list__item a:hover,
   .nav-list__item a:focus {
-    border-bottom: 2px solid #ffffff;
+    border-bottom: 2px solid #f9fbfd;
     outline: none;
   }
 
@@ -1404,36 +1441,11 @@ button,
     outline: none;
   }
 
-  .cruises-item:hover {
-    background-color: #011C40;
-  }
-
-  .cruises-item:hover img {
-    display: none;
-  }
-
-  .cruises-item:hover h3 {
-    position: static;
-  }
-
-  .cruises-item:hover dl {
-    opacity: 1;
-  }
-
-  .cruises-item:hover a {
-    opacity: 1;
-  }
-
-  .cruises-item:hover .cruises-item__gradient-effect {
-    z-index: -1;
-  }
-
   .booking-form input:not(input[type="checkbox"]):hover {
     outline: 2px solid #86daed;
   }
 
-  .booking-form button:hover,
-  .booking-form button:focus {
+  .booking-form button:hover {
     background-color: #86daed;
   }
 
@@ -1457,8 +1469,8 @@ button,
   }
 
   .nav-list__item {
-    margin-left: 12px;
-    font-size: 0.875em;
+    margin-left: 11px;
+    font-size: 0.88em;
   }
 
   .logo {
@@ -1467,14 +1479,22 @@ button,
   }
 
   .title {
-    font-size: 1.625em;
+    font-size: 1.63em;
     margin-bottom: 30px;
+  }
+
+  .footer {
+    padding: 45px 0;
   }
 
   .footer__nav {
     -webkit-column-gap: 25px;
     -moz-column-gap: 25px;
     column-gap: 25px;
+    -ms-grid-columns: -webkit-min-content 1fr minmax(106px, 18%);
+    -ms-grid-columns: min-content 1fr minmax(106px, 18%);
+    grid-template-columns: -webkit-min-content 1fr minmax(106px, 18%);
+    grid-template-columns: min-content 1fr minmax(106px, 18%);
   }
 
   .footer-list__item {
@@ -1484,6 +1504,10 @@ button,
 
   .footer-list__item:not(:last-child) {
     margin-right: 23px;
+  }
+
+  .social-list__item:not(:first-child) {
+    margin-left: 5px;
   }
 
   .social-list__item svg {
@@ -1497,19 +1521,24 @@ button,
   }
 
   .intro h1 {
-    font-size: 3.125em;
+    font-size: 3.13em;
   }
 
   .intro p {
-    font-size: 1.125em;
+    font-size: 1.13em;
   }
 
   .adventure {
-    padding: 100px 0;
+    padding: 90px 0;
+  }
+
+  .adventure__title {
+    max-width: 48%;
   }
 
   .adventure__title h3 {
-    margin-bottom: 30px;
+    line-height: 1.4em;
+    margin-bottom: 17px;
   }
 
   .adventure__photo {
@@ -1521,11 +1550,12 @@ button,
   }
 
   .advantages {
-    padding: 100px 0;
+    padding: 90px 0;
   }
 
   .advantages-list__item {
-    padding: 25px 20px;
+    width: 30.5%;
+    padding: 25px 10px 22px 20px;
   }
 
   .advantages-list__item svg {
@@ -1533,8 +1563,12 @@ button,
     height: 26px;
   }
 
+  .advantages-list__item h3 {
+    line-height: 1.4em;
+  }
+
   .cruises {
-    padding: 100px 15px;
+    padding: 90px 15px 100px;
   }
 
   .criuses-list {
@@ -1543,11 +1577,7 @@ button,
   }
 
   .cruises-item {
-    padding: 35px;
-  }
-
-  .cruises-item--nojs {
-    background-color: #011C40;
+    padding: 28px 35px 35px;
   }
 
   .cruises-item--nojs img {
@@ -1556,22 +1586,30 @@ button,
 
   .cruises-item--nojs h3 {
     position: static;
+    -webkit-box-ordinal-group: 1;
+    -ms-flex-order: 0;
+    order: 0;
   }
 
   .cruises-item--nojs dl {
-    opacity: 1;
+    z-index: 10;
   }
 
   .cruises-item--nojs a {
-    opacity: 1;
+    z-index: 10;
   }
 
   .cruises-item--nojs .cruises-item__gradient-effect {
     z-index: -1;
   }
 
+  .cruises-item h3 {
+    top: 22px;
+    left: 3px;
+  }
+
   .booking {
-    padding: 100px 0;
+    padding: 90px 0 100px;
   }
 
   .booking__wrapper {
@@ -1587,12 +1625,11 @@ button,
   .booking__title {
     width: 100%;
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
   }
 
   .booking__title h2 {
-    font-size: 2.125em;
-    margin-bottom: 0;
+    font-size: 2.13em;
   }
 
   .booking__title p {
@@ -1609,6 +1646,23 @@ button,
 
   .contacts__info {
     width: 48%;
+    padding-bottom: 0;
+  }
+
+  .contacts__info p:not(:first-of-type) {
+    line-height: 1.5em;
+  }
+
+  .contacts__info p:not(:last-of-type) {
+    margin-bottom: 25px;
+  }
+
+  .contacts__info svg {
+    top: 3px;
+  }
+
+  .contacts__address svg {
+    top: 4px;
   }
 
   .contacts__map {
@@ -1622,13 +1676,31 @@ button,
     padding: 0 4.6875%;
   }
 
+  .burger {
+    display: block;
+  }
+
+  .checkbox {
+    padding-left: 25px;
+  }
+
+  .checkbox::before {
+    width: 20px;
+    height: 20px;
+  }
+
+  .checkbox svg {
+    width: 20px;
+    height: 20px;
+  }
+
   .header {
     padding: 20px 0;
   }
 
   .header--nojs {
     position: relative;
-    background-color: #011C40;
+    background-color: #011c40;
   }
 
   .main-nav {
@@ -1644,7 +1716,7 @@ button,
     position: absolute;
     top: 0;
     right: 0;
-    padding: 85px 7.8125% 25px;
+    padding: 80px 6.25% 25px;
     width: 89.0625%;
     height: 100vh;
     /* stylelint-disable-next-line */
@@ -1658,7 +1730,7 @@ button,
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
-    background-color: #ffffff;
+    background-color: #f9fbfd;
     overflow: scroll;
     z-index: 5;
     -webkit-transition: -webkit-transform 0.3s ease 0s;
@@ -1676,7 +1748,7 @@ button,
     z-index: 5;
     width: 89.0625%;
     height: 70px;
-    background-color: #ffffff;
+    background-color: #f9fbfd;
   }
 
   .nav-list--nojs {
@@ -1711,19 +1783,15 @@ button,
   .nav-list__item {
     margin-left: 0;
     padding: 0;
-    font-size: 1.125em;
+    font-size: 1.13em;
   }
 
   .nav-list__item:not(:last-child) {
-    margin-bottom: 26px;
+    margin-bottom: 10px;
   }
 
   .nav-list__item a {
-    color: #011C40;
-  }
-
-  .burger {
-    display: block;
+    color: #011c40;
   }
 
   .logo-light--inactive {
@@ -1757,7 +1825,7 @@ button,
     -webkit-column-gap: 0;
     -moz-column-gap: 0;
     column-gap: 0;
-    row-gap: 30px;
+    row-gap: 22px;
   }
 
   .footer-list {
@@ -1767,9 +1835,13 @@ button,
     flex-direction: column;
   }
 
+  .footer-list__item {
+    line-height: 1.2em;
+  }
+
   .footer-list__item:not(:last-child) {
     margin-right: 0;
-    margin-bottom: 23px;
+    margin-bottom: 8px;
   }
 
   .social-list {
@@ -1777,17 +1849,13 @@ button,
     -ms-flex-pack: start;
     justify-content: flex-start;
     margin-left: -10px;
+    margin-top: -5px;
   }
 
   .social-list__item {
-    margin-right: 15px;
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
-  }
-
-  .social-list__item:not(:first-child) {
-    margin-left: 0;
   }
 
   .intro {
@@ -1807,7 +1875,7 @@ button,
   }
 
   .adventure {
-    padding: 65px 0;
+    padding: 55px 0 65px;
   }
 
   .adventure__wrapper {
@@ -1825,7 +1893,7 @@ button,
   }
 
   .adventure__title p {
-    margin-bottom: 40px;
+    margin-bottom: 33px;
   }
 
   .adventure__photo {
@@ -1837,11 +1905,11 @@ button,
   }
 
   .advantages {
-    padding: 65px 0;
+    padding: 55px 0 35px;
   }
 
   .advantages h2 {
-    margin-bottom: 40px;
+    margin-bottom: 32px;
   }
 
   .advantages-list {
@@ -1855,14 +1923,21 @@ button,
   }
 
   .advantages-list__item {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
+    width: 100%;
     margin-bottom: 30px;
   }
 
+  .advantages-list__item h3 {
+    margin-bottom: 9px;
+    padding-right: 80px;
+  }
+
   .cruises {
-    padding: 65px 10px;
+    padding: 60px 10px;
+  }
+
+  .cruises h2 {
+    margin-bottom: 30px;
   }
 
   .criuses-list {
@@ -1871,7 +1946,11 @@ button,
   }
 
   .cruises-item {
-    padding: 35px 25px;
+    padding: 25px 25px 35px;
+  }
+
+  .cruises-item h3 {
+    top: 28px;
   }
 
   .cruises-item__photo img {
@@ -1884,44 +1963,33 @@ button,
   }
 
   .booking__title {
-    margin-bottom: 40px;
+    margin-bottom: 32px;
   }
 
   .booking__title h2 {
     font-size: 1.5em;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
   }
 
   .booking__title p {
     font-size: 1em;
-    padding: 0;
+    line-height: 1.4em;
+    padding: 0 15px;
   }
 
   .booking-form {
-    padding: 40px 38px;
+    padding: 34px 30px 40px;
     width: 100%;
   }
 
   .booking-form p {
+    line-height: 1.4em;
     text-align: center;
-  }
-
-  .booking-form label[for="personal-data"] {
-    padding-left: 25px;
-  }
-
-  .booking-form label[for="personal-data"]::before {
-    width: 20px;
-    height: 20px;
-  }
-
-  .booking-form label[for="personal-data"] svg {
-    width: 20px;
-    height: 20px;
+    margin-bottom: 28px;
   }
 
   .contacts {
-    padding: 65px 0;
+    padding: 55px 0 65px;
   }
 
   .contacts__wrapper {
@@ -1936,7 +2004,16 @@ button,
 
   .contacts__info {
     width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+  }
+
+  .contacts__info p:not(:first-of-type) {
+    line-height: 1.5em;
+    margin-bottom: 18px;
+  }
+
+  .contacts__info p:not(:last-of-type) {
+    margin-bottom: 26px;
   }
 
   .contacts__map {
@@ -1946,8 +2023,34 @@ button,
 }
 
 @media (hover: hover), screen {
-  .cruises-item a:hover,
-  .cruises-item a:focus {
+  .cruises-item a:hover {
     background-color: #86daed;
+  }
+
+  .cruises-item:hover {
+    background-color: #011c40;
+  }
+
+  .cruises-item:hover img {
+    display: none;
+  }
+
+  .cruises-item:hover h3 {
+    position: static;
+    -webkit-box-ordinal-group: 1;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+
+  .cruises-item:hover dl {
+    z-index: 10;
+  }
+
+  .cruises-item:hover a {
+    z-index: 10;
+  }
+
+  .cruises-item:hover .cruises-item__gradient-effect {
+    z-index: -1;
   }
 }

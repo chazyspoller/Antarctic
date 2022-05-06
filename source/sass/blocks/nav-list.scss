@@ -10,7 +10,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    padding: 85px 25/320 * 100% 25px;
+    padding: 80px 20/320 * 100% 25px;
     width: 285/320 * 100%;
     height: 100vh;
     /* stylelint-disable-next-line */
@@ -18,7 +18,7 @@
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    background-color: $color-default-white;
+    background-color: $color-light-back;
     overflow: scroll;
     z-index: 5;
     transition: transform 0.3s ease 0s;
@@ -31,7 +31,7 @@
       z-index: 5;
       width: 285/320 * 100%;
       height: 70px;
-      background-color: $color-default-white;
+      background-color: $color-light-back;
     }
   }
 
@@ -56,48 +56,48 @@
       display: block;
     }
   }
+}
 
-  &__item {
-    margin-left: 22px;
-    font: 500 1em/1.5em $ff-default;
+.nav-list__item {
+  margin-left: 22px;
+  font: 500 1em/1.5em $ff-default;
 
-    @include vp-1365 {
-      margin-left: 12px;
-      font-size: 0.875em;
+  @include vp-1365 {
+    margin-left: 11px;
+    font-size: 0.88em;
+  }
+
+  @include vp-767 {
+    margin-left: 0;
+    padding: 0;
+    font-size: 1.13em;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  a {
+    color: $color-light-back;
+    display: inline-block;
+    padding: 5px;
+    border-bottom: 2px solid $color-transparent;
+    transition: border-bottom 0.3s ease 0s;
+
+    @media (hover: hover), screen and (min-width: $vp-1366) {
+      &:hover,
+      &:focus {
+        border-bottom: 2px solid $color-light-back;
+        outline: none;
+      }
+    }
+
+    &:active {
+      color: $color-active;
     }
 
     @include vp-767 {
-      margin-left: 0;
-      padding: 0;
-      font-size: 1.125em;
-
-      &:not(:last-child) {
-        margin-bottom: 26px;
-      }
-    }
-
-    a {
-      color: $color-default-white;
-      display: inline-block;
-      padding: 5px;
-      border-bottom: 2px solid $color-transparent;
-      transition: border-bottom 0.3s ease 0s;
-
-      @media (hover: hover), screen and (min-width: $vp-1366) {
-        &:hover,
-        &:focus {
-          border-bottom: 2px solid $color-default-white;
-          outline: none;
-        }
-      }
-
-      &:active {
-        color: $color-active;
-      }
-
-      @include vp-767 {
-        color: $color-dark-blue;
-      }
+      color: $color-dark-blue;
     }
   }
 }

@@ -9,41 +9,51 @@
     flex-direction: column;
     justify-content: flex-start;
   }
+}
 
-  &__item {
-    margin-bottom: 10px;
-    flex: 0 0 31%;
-    padding: 30px;
-    background-color: $color-light-back;
-    color: $color-dark-blue;
+.advantages-list__item {
+  margin-bottom: 10px;
+  width: 31%;
+  padding: 30px 30px 26px;
+  background-color: $color-light-back;
+  color: $color-dark-blue;
+
+  @include vp-1365 {
+    width: 30.5%;
+    padding: 25px 10px 22px 20px;
+  }
+
+  @include vp-767 {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  svg {
+    margin-bottom: 12px;
 
     @include vp-1365 {
-      padding: 25px 20px;
+      width: auto;
+      height: 26px;
+    }
+  }
+
+  h3 {
+    @include reset-margins;
+    font: 500 1.13em/1.3em $ff-default;
+    margin-bottom: 12px;
+
+    @include vp-1365 {
+      line-height: 1.4em;
     }
 
     @include vp-767 {
-      flex: 0 0 100%;
-      margin-bottom: 30px;
+      margin-bottom: 9px;
+      padding-right: 80px;
     }
+  }
 
-    svg {
-      margin-bottom: 10px;
-
-      @include vp-1365 {
-        width: auto;
-        height: 26px;
-      }
-    }
-
-    h3 {
-      @include reset-margins;
-      font: 500 1.125em/1.3em $ff-default;
-      margin-bottom: 15px;
-    }
-
-    p {
-      @include reset-margins;
-      font: 400 0.875em/1.2em $ff-default;
-    }
+  p {
+    @include reset-margins;
+    font: 400 0.88em/1.4em $ff-default;
   }
 }

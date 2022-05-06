@@ -1,0 +1,40 @@
+.checkbox {
+  padding-left: 23px;
+  position: relative;
+
+  @include vp-767 {
+    padding-left: 25px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    background-color: $color-light-back;
+
+    @include vp-767 {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    fill: none;
+    display: none;
+
+    @include vp-767 {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

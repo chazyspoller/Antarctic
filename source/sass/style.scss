@@ -12,6 +12,8 @@
 @import "global/reboot";
 @import "global/utils";
 @import "global/container";
+@import "global/burger";
+@import "global/checkbox";
 
 // Blocks
 // ---------------------------------
@@ -19,7 +21,6 @@
 @import "blocks/header";
 @import "blocks/main-nav";
 @import "blocks/nav-list";
-@import "blocks/burger";
 @import "blocks/logo";
 @import "blocks/back-bg";
 @import "blocks/title";

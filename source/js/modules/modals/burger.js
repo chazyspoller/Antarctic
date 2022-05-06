@@ -5,6 +5,7 @@ const logoLight = header.querySelector('.logo-light');
 const logoDark = header.querySelector('.logo-dark');
 const body = document.querySelector('body');
 const mainNavLinks = mainNav.querySelectorAll('[data-links="main-nav-link"]');
+const footerLinks = document.querySelectorAll('[data-links="footer-link"]');
 
 const checkExist = burger && header && mainNav;
 
@@ -80,6 +81,11 @@ const linksListener = () => {
       link.addEventListener('click', scrollToElement);
     });
   }
+  if (footerLinks.length) {
+    footerLinks.forEach((link) => {
+      link.addEventListener('click', scrollToElement);
+    });
+  }
 };
 
 const activateMainNav = () => {
@@ -92,4 +98,4 @@ const activateMainNav = () => {
   }
 };
 
-export { activateMainNav };
+export {activateMainNav};
