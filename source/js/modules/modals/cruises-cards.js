@@ -5,7 +5,6 @@ const activeJS = () => {
 };
 
 const onCardClick = (evt) => {
-  evt.preventDefault();
   const cardInfo = evt.target.closest('.cruises-item');
 
   if (cardInfo) {
