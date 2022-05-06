@@ -1441,6 +1441,33 @@ button,
     outline: none;
   }
 
+  .cruises-item a:hover {
+    background-color: #86daed;
+  }
+
+  .cruises-item:hover img {
+    display: none;
+  }
+
+  .cruises-item:hover h3 {
+    position: static;
+    -webkit-box-ordinal-group: 1;
+    -ms-flex-order: 0;
+    order: 0;
+  }
+
+  .cruises-item:hover dl {
+    z-index: 10;
+  }
+
+  .cruises-item:hover a {
+    z-index: 10;
+  }
+
+  .cruises-item:hover .cruises-item__gradient-effect {
+    z-index: -1;
+  }
+
   .booking-form input:not(input[type="checkbox"]):hover {
     outline: 2px solid #86daed;
   }
@@ -2019,38 +2046,5 @@ button,
   .contacts__map {
     width: 100%;
     height: 316px;
-  }
-}
-
-@media (hover: hover), screen {
-  .cruises-item a:hover {
-    background-color: #86daed;
-  }
-
-  .cruises-item:hover {
-    background-color: #011c40;
-  }
-
-  .cruises-item:hover img {
-    display: none;
-  }
-
-  .cruises-item:hover h3 {
-    position: static;
-    -webkit-box-ordinal-group: 1;
-    -ms-flex-order: 0;
-    order: 0;
-  }
-
-  .cruises-item:hover dl {
-    z-index: 10;
-  }
-
-  .cruises-item:hover a {
-    z-index: 10;
-  }
-
-  .cruises-item:hover .cruises-item__gradient-effect {
-    z-index: -1;
   }
 }
