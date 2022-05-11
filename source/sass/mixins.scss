@@ -1,3 +1,9 @@
+@mixin retinaD {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) and (min-width: $vp-1366) {
+    @content;
+  }
+}
+
 @mixin retina {
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     @content;

@@ -30,19 +30,7 @@ const scrollToElement = (evt) => {
   }
 };
 
-const closeMainNav = () => {
-  if (logoLight && logoDark) {
-    logoLight.classList.remove('logo-light--inactive');
-    logoDark.classList.remove('logo-dark--active');
-  }
-
-  burger.classList.remove('burger--close');
-  mainNav.classList.remove('nav-list--active');
-  body.classList.remove('scroll-lock');
-  body.classList.remove('scroll-lock-ios');
-};
-
-const burgerOnCLick = () => {
+const burgerOnClick = () => {
   if (logoLight && logoDark) {
     logoLight.classList.toggle('logo-light--inactive');
     logoDark.classList.toggle('logo-dark--active');
@@ -51,7 +39,7 @@ const burgerOnCLick = () => {
   burger.classList.toggle('burger--close');
   mainNav.classList.toggle('nav-list--active');
   body.classList.toggle('scroll-lock');
-  body.classList.remove('scroll-lock-ios');
+  body.classList.toggle('scroll-lock-ios');
 
 };
 
@@ -60,18 +48,18 @@ const onDocumentEscCloseMenu = (evt) => {
 
   if (isEsc && mainNav.classList.contains('nav-list--active')) {
     evt.preventDefault();
-    closeMainNav();
+    burgerOnClick();
   }
 };
 
 const onDocumentCLickCloseMenu = (evt) => {
   if (mainNav.classList.contains('nav-list--active') && !mainNav.contains(evt.target) && evt.target !== burger) {
-    closeMainNav();
+    burgerOnClick();
   }
 };
 
 const onLinkClick = () => {
-  closeMainNav();
+  burgerOnClick();
 };
 
 const linksListener = () => {
@@ -91,7 +79,7 @@ const linksListener = () => {
 const activateMainNav = () => {
   if (checkExist) {
     jsActive();
-    burger.addEventListener('click', burgerOnCLick);
+    burger.addEventListener('click', burgerOnClick);
     burger.addEventListener('keydown', onDocumentEscCloseMenu);
     document.addEventListener('click', onDocumentCLickCloseMenu);
     linksListener();

@@ -2,12 +2,29 @@
   padding: 50px 70px;
   position: relative;
 
+  background: $header-background url("../img/booking-back.jpg") center 75% no-repeat;
+  background-size: cover;
+
+  @include retinaD {
+    background-image: url("../img/booking-back@2x.jpg");
+  }
+
   @include vp-1365 {
     padding: 90px 0 100px;
+    background-image: url("../img/booking-back-tablet.jpg");
+
+    @include retina {
+      background-image: url("../img/booking-back-tablet@2x.jpg");
+    }
   }
 
   @include vp-767 {
     padding: 65px 0;
+    background-image: url("../img/booking-back-mobile.jpg");
+
+    @include retina {
+      background-image: url("../img/booking-back-mobile@2x.jpg");
+    }
   }
 }
 

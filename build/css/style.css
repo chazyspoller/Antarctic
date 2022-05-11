@@ -389,7 +389,7 @@ template {
   font-weight: 400;
   font-family: "Montserrat";
   font-display: swap;
-  src: url("../fonts/Montserrat-Regular.woff2") format("woff2"), url("../fonts/Montserrat-Regular.woff") format("woff");
+  src: url("../fonts/montserrat-regular.woff2") format("woff2"), url("../fonts/montserrat-regular.woff") format("woff");
 }
 
 @font-face {
@@ -397,7 +397,7 @@ template {
   font-weight: 500;
   font-family: "Montserrat";
   font-display: swap;
-  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
+  src: url("../fonts/montserrat-medium.woff2") format("woff2"), url("../fonts/montserrat-medium.woff") format("woff");
 }
 
 @font-face {
@@ -405,7 +405,7 @@ template {
   font-weight: 600;
   font-family: "Montserrat";
   font-display: swap;
-  src: url("../fonts/Montserrat-SemiBold.woff2") format("woff2"), url("../fonts/Montserrat-SemiBold.woff") format("woff");
+  src: url("../fonts/montserrat-semibold.woff2") format("woff2"), url("../fonts/montserrat-semibold.woff") format("woff");
 }
 
 @font-face {
@@ -413,7 +413,7 @@ template {
   font-weight: 700;
   font-family: "Montserrat";
   font-display: swap;
-  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  src: url("../fonts/montserrat-bold.woff2") format("woff2"), url("../fonts/montserrat-bold.woff") format("woff");
 }
 
 *,
@@ -453,113 +453,13 @@ a {
   text-decoration: none;
 }
 
-img,
-video {
+img {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-textarea {
-  resize: none;
-}
-
-input:-webkit-autofill {
-  -webkit-box-shadow: inset 0 0 0 1000px #ffffff;
-  box-shadow: inset 0 0 0 1000px #ffffff;
-  -webkit-text-fill-color: #000000;
-}
-
-input,
-textarea {
-  border-radius: 0;
-}
-
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder {
-  opacity: 1;
-}
-
-input::-moz-placeholder,
-textarea::-moz-placeholder {
-  opacity: 1;
-}
-
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
-  opacity: 1;
-}
-
-input::-ms-input-placeholder,
-textarea::-ms-input-placeholder {
-  opacity: 1;
-}
-
-input::placeholder,
-textarea::placeholder {
-  opacity: 1;
-}
-
-input:invalid,
-textarea:invalid {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-select {
-  border-radius: 0;
-}
-
-input::-ms-clear,
-input::-ms-reveal {
-  display: none;
-}
-
-input[type="search"]::-webkit-search-decoration,
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration {
-  -webkit-appearance: none;
-  appearance: none;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  margin: 0;
-  -webkit-appearance: none;
-  appearance: none;
-}
-
-input[type="number"] {
-  -webkit-appearance: textfield;
-  -moz-appearance: textfield;
-  appearance: textfield;
-}
-
-select,
-textarea,
-input:matches([type="email"],
-[type="number"],
-[type="password"],
-[type="search"],
-[type="tel"],
-[type="text"],
-[type="url"]) {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-.wrapper {
+body {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -571,13 +471,13 @@ button,
   min-height: 100vh;
 }
 
-.wrapper .header,
-.wrapper .footer {
+body .header,
+body .footer {
   -ms-flex-negative: 0;
   flex-shrink: 0;
 }
 
-.wrapper main {
+body main {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
@@ -595,15 +495,6 @@ button,
   clip: rect(0 0 0 0);
   -webkit-clip-path: inset(100%);
   clip-path: inset(100%);
-}
-
-.scroll-lock-ios {
-  position: fixed;
-  overflow: hidden;
-}
-
-.scroll-lock {
-  overflow: hidden;
 }
 
 .no-scrollbar {
@@ -703,12 +594,39 @@ button,
   transform: rotate(-45deg);
 }
 
-.checkbox {
-  padding-left: 23px;
-  position: relative;
+.checkbox input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
 }
 
-.checkbox::before {
+.checkbox input:checked + label > svg {
+  display: block;
+}
+
+.checkbox input:focus + label::before {
+  background-color: #86daed;
+}
+
+.checkbox__visual {
+  padding-left: 23px;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  color: #f9fbfd;
+  font: 400 0.63em/1em "Montserrat", "Arial", sans-serif;
+  margin-bottom: 30px;
+}
+
+.checkbox__visual::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -721,7 +639,7 @@ button,
   background-color: #f9fbfd;
 }
 
-.checkbox svg {
+.checkbox__visual svg {
   position: absolute;
   top: 50%;
   left: 0;
@@ -786,6 +704,7 @@ button,
 .nav-list__item a {
   color: #f9fbfd;
   display: inline-block;
+  vertical-align: middle;
   padding: 5px;
   border-bottom: 2px solid rgba(255, 255, 255, 0);
   -webkit-transition: border-bottom 0.3s ease 0s;
@@ -824,6 +743,8 @@ button,
 
 .back-bg--map img {
   z-index: 0;
+  -o-object-position: center bottom;
+  object-position: center bottom;
 }
 
 .title {
@@ -906,7 +827,7 @@ button,
   margin-left: 13px;
 }
 
-.social-list__item a {
+.social-list__link {
   font-size: 0;
   line-height: 0;
   width: 30px;
@@ -925,11 +846,11 @@ button,
   transition: opacity 0.3s ease 0s;
 }
 
-.social-list__item a:active svg {
+.social-list__link:active svg {
   fill: #86daed;
 }
 
-.social-list__item svg {
+.social-list__link svg {
   width: 20px;
   height: 20px;
   fill: #f9fbfd;
@@ -944,6 +865,8 @@ button,
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   position: relative;
   z-index: 3;
+  background: #d7e4f3 url("../img/intro-back.jpg") center 75% no-repeat;
+  background-size: cover;
 }
 
 .intro h1 {
@@ -1009,6 +932,8 @@ button,
   position: relative;
   padding: 110px 0;
   min-height: 562px;
+  background: #d7e4f3 url("../img/advantages-back.jpg") center 75% no-repeat;
+  background-size: cover;
 }
 
 .advantages h2 {
@@ -1216,6 +1141,8 @@ button,
 .booking {
   padding: 50px 70px;
   position: relative;
+  background: #d7e4f3 url("../img/booking-back.jpg") center 75% no-repeat;
+  background-size: cover;
 }
 
 .booking__wrapper {
@@ -1322,21 +1249,6 @@ button,
   transform: scale(0.95);
 }
 
-.booking-form label[for="personal-data"] {
-  display: inline-block;
-  color: #f9fbfd;
-  font: 400 0.63em/1em "Montserrat", "Arial", sans-serif;
-  margin-bottom: 30px;
-}
-
-.booking-form input[type="checkbox"]:checked + label > svg {
-  display: block;
-}
-
-.booking-form input[type="checkbox"]:focus + label::before {
-  background-color: #86daed;
-}
-
 .contacts {
   padding: 120px 0 92px;
   background-color: #f9fbfd;
@@ -1423,6 +1335,10 @@ button,
 } */
 
 @media (hover: hover), screen and (min-width: 1366px) {
+  .checkbox__visual:hover {
+    color: #86daed;
+  }
+
   .nav-list__item a:hover,
   .nav-list__item a:focus {
     border-bottom: 2px solid #f9fbfd;
@@ -1435,8 +1351,8 @@ button,
     outline: none;
   }
 
-  .social-list__item a:hover,
-  .social-list__item a:focus {
+  .social-list__link:hover,
+  .social-list__link:focus {
     opacity: 0.6;
     outline: none;
   }
@@ -1476,13 +1392,23 @@ button,
     background-color: #86daed;
   }
 
-  .booking-form label[for="personal-data"]:hover {
-    color: #86daed;
-  }
-
   .contacts__info a:hover,
   .contacts__info a:focus {
     color: #86daed;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 1366px), (-o-min-device-pixel-ratio: 3/2) and (min-width: 1366px), (min-resolution: 1.5dppx) and (min-width: 1366px) {
+  .intro {
+    background-image: url("../img/intro-back@2x.jpg");
+  }
+
+  .advantages {
+    background-image: url("../img/advantages-back@2x.jpg");
+  }
+
+  .booking {
+    background-image: url("../img/booking-back@2x.jpg");
   }
 }
 
@@ -1537,7 +1463,7 @@ button,
     margin-left: 5px;
   }
 
-  .social-list__item svg {
+  .social-list__link svg {
     width: 16px;
     height: 16px;
   }
@@ -1545,6 +1471,7 @@ button,
   .intro {
     padding: 268px 0 20px;
     min-height: 638px;
+    background-image: url("../img/intro-back-tablet.jpg");
   }
 
   .intro h1 {
@@ -1578,6 +1505,7 @@ button,
 
   .advantages {
     padding: 90px 0;
+    background-image: url("../img/advantages-back-tablet.jpg");
   }
 
   .advantages-list__item {
@@ -1637,6 +1565,7 @@ button,
 
   .booking {
     padding: 90px 0 100px;
+    background-image: url("../img/booking-back-tablet.jpg");
   }
 
   .booking__wrapper {
@@ -1698,7 +1627,30 @@ button,
   }
 }
 
+@media (max-width: 1365px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1365px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 1365px) and (min-resolution: 144dpi), (max-width: 1365px) and (min-resolution: 1.5dppx) {
+  .intro {
+    background-image: url("../img/intro-back-tablet@2x.jpg");
+  }
+
+  .advantages {
+    background-image: url("../img/advantages-back-tablet@2x.jpg");
+  }
+
+  .booking {
+    background-image: url("../img/booking-back-tablet@2x.jpg");
+  }
+}
+
 @media (max-width: 767px) {
+  .scroll-lock-ios {
+    position: fixed;
+    overflow: hidden;
+  }
+
+  .scroll-lock {
+    overflow: hidden;
+  }
+
   .container {
     padding: 0 4.6875%;
   }
@@ -1707,16 +1659,16 @@ button,
     display: block;
   }
 
-  .checkbox {
+  .checkbox__visual {
     padding-left: 25px;
   }
 
-  .checkbox::before {
+  .checkbox__visual::before {
     width: 20px;
     height: 20px;
   }
 
-  .checkbox svg {
+  .checkbox__visual svg {
     width: 20px;
     height: 20px;
   }
@@ -1888,6 +1840,7 @@ button,
   .intro {
     padding: 177px 0 20px;
     min-height: 500px;
+    background-image: url("../img/intro-back-mobile.jpg");
   }
 
   .intro h1 {
@@ -1933,6 +1886,7 @@ button,
 
   .advantages {
     padding: 55px 0 35px;
+    background-image: url("../img/advantages-back-mobile.jpg");
   }
 
   .advantages h2 {
@@ -1987,6 +1941,7 @@ button,
 
   .booking {
     padding: 65px 0;
+    background-image: url("../img/booking-back-mobile.jpg");
   }
 
   .booking__title {
@@ -2046,5 +2001,19 @@ button,
   .contacts__map {
     width: 100%;
     height: 316px;
+  }
+}
+
+@media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
+  .intro {
+    background-image: url("../img/intro-back-mobile@2x.jpg");
+  }
+
+  .advantages {
+    background-image: url("../img/advantages-back-mobile@2x.jpg");
+  }
+
+  .booking {
+    background-image: url("../img/booking-back-mobile@2x.jpg");
   }
 }

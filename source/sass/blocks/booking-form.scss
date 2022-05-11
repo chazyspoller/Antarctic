@@ -74,25 +74,4 @@
       transform: scale(0.95);
     }
   }
-
-  label[for="personal-data"] {
-    display: inline-block;
-    color: $color-light-back;
-    font: 400 0.63em/1em $ff-default;
-    margin-bottom: 30px;
-
-    @media (hover: hover), screen and (min-width: $vp-1366) {
-      &:hover {
-        color: $color-active;
-      }
-    }
-  }
-
-  input[type="checkbox"]:checked + label > svg {
-    display: block;
-  }
-
-  input[type="checkbox"]:focus + label::before {
-    background-color: $color-active;
-  }
 }

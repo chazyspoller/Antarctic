@@ -60,7 +60,7 @@ const sprite = () => {
 };
 
 const copySvg = () => {
-  return gulp.src('source/img/**/*.svg', { base: 'source' })
+  return gulp.src('source/img/svg/*.svg', { base: 'source' })
     .pipe(gulp.dest('build'));
 };
 
@@ -72,8 +72,8 @@ const copyImages = () => {
 const copy = () => {
   return gulp.src([
     'source/**.html',
+    'source/img/favicons/**.svg',
     'source/fonts/**',
-    'source/img/**',
     'source/**.ico',
   ], {
     base: 'source',
@@ -113,7 +113,7 @@ const refresh = (done) => {
   done();
 };
 
-const build = gulp.series(clean, svgo, copy, css, sprite, js);
+const build = gulp.series(clean, svgo, copy, copySvg, copyImages, css, sprite, js);
 
 const start = gulp.series(build, syncServer);
 
@@ -127,7 +127,7 @@ const start = gulp.series(build, syncServer);
 // root = 'content/' - webp добавляются и обновляются только в source/img/content/
 
 const createWebp = () => {
-  const root = '';
+  const root = 'content/';
   return gulp.src(`source/img/${root}**/*.{png,jpg}`)
     .pipe(webp({ quality: 90 }))
     .pipe(gulp.dest(`source/img/${root}`));

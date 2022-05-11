@@ -7,14 +7,31 @@
   position: relative;
   z-index: 3;
 
+  background: $header-background url("../img/intro-back.jpg") center 75% no-repeat;
+  background-size: cover;
+
+  @include retinaD {
+    background-image: url("../img/intro-back@2x.jpg");
+  }
+
   @include vp-1365 {
     padding: 185px + 83px 0 20px;
     min-height: 638px;
+    background-image: url("../img/intro-back-tablet.jpg");
+
+    @include retina {
+      background-image: url("../img/intro-back-tablet@2x.jpg");
+    }
   }
 
   @include vp-767 {
     padding: 117px + 60px 0 20px;
     min-height: 500px;
+    background-image: url("../img/intro-back-mobile.jpg");
+
+    @include retina {
+      background-image: url("../img/intro-back-mobile@2x.jpg");
+    }
   }
 
   h1 {

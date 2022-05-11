@@ -167,21 +167,21 @@
 
 .cruises-item a[data-card="link"]:focus {
   z-index: 10;
+}
 
-  & ~ picture img {
-    display: none;
-  }
+.cruises-item a[data-card="link"]:focus ~ picture img {
+  display: none;
+}
 
-  & ~ h3 {
-    position: static;
-    order: 0;
-  }
+.cruises-item a[data-card="link"]:focus ~ h3 {
+  position: static;
+  order: 0;
+}
 
-  & ~ dl {
-    z-index: 10;
-  }
+.cruises-item a[data-card="link"]:focus ~ dl {
+  z-index: 10;
+}
 
-  & ~ .cruises-item__gradient-effect {
-    display: none;
-  }
+.cruises-item a[data-card="link"]:focus ~ .cruises-item__gradient-effect {
+  display: none;
 }

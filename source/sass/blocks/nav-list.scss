@@ -80,6 +80,7 @@
   a {
     color: $color-light-back;
     display: inline-block;
+    vertical-align: middle;
     padding: 5px;
     border-bottom: 2px solid $color-transparent;
     transition: border-bottom 0.3s ease 0s;
