@@ -7,7 +7,7 @@
   }
 
   @include vp-767 {
-    padding: 55px 0 65px;
+    padding: 56px 0 64px;
   }
 }
 
@@ -39,10 +39,16 @@
   p {
     &:first-of-type {
       font: 500 1.13em/1.5em $ff-default;
+      margin-bottom: 33px;
+
+      @include vp-1365 {
+        margin-bottom: 30px;
+      }
     }
 
     &:not(:first-of-type) {
       padding-left: 28px;
+      line-height: 1.1em;
 
       @include vp-1365 {
         line-height: 1.5em;
@@ -59,15 +65,15 @@
     font: 400 1em/1.2em $ff-default;
     color: $color-dark-blue;
 
-    &:not(:last-of-type) {
-      margin-bottom: 30px;
+    &:not(:last-of-type):not(:first-of-type) {
+      margin-bottom: 27px;
 
       @include vp-1365 {
-        margin-bottom: 25px;
+        margin-bottom: 22px;
       }
 
       @include vp-767 {
-        margin-bottom: 26px;
+        margin-bottom: 20px;
       }
     }
   }

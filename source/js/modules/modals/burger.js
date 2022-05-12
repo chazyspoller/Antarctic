@@ -40,7 +40,7 @@ const burgerOnClick = () => {
   mainNav.classList.toggle('nav-list--active');
   body.classList.toggle('scroll-lock');
   body.classList.toggle('scroll-lock-ios');
-
+  body.classList.toggle('overlay');
 };
 
 const onDocumentEscCloseMenu = (evt) => {

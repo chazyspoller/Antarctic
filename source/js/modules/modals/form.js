@@ -30,6 +30,7 @@ const checkPhoneMask = (evt) => {
 
   if (clearVal !== 'false' && evt.type === 'blur') {
     if (val.length < matrix.match(/([\_\d])/g).length) {
+      evt.target.value = '';
       evt.target.classList.add('input--error');
       return;
     }

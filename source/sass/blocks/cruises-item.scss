@@ -2,7 +2,6 @@
   position: relative;
   z-index: 2;
   padding: 30px 25px 32px 25px;
-  min-width: 260px;
   min-height: 386px;
   display: flex;
   flex-direction: column;
@@ -65,6 +64,7 @@
   dl {
     @include reset-margins;
     z-index: -1;
+    margin-bottom: 5px;
   }
 
   dt {

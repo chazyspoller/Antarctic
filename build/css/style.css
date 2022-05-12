@@ -514,6 +514,18 @@ body main {
   outline: 2px solid #ff1553;
 }
 
+.overlay::before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 43, 102, 0.5);
+  z-index: 4;
+}
+
 .container {
   width: 100%;
   max-width: 1920px;
@@ -623,7 +635,7 @@ body main {
   vertical-align: middle;
   color: #f9fbfd;
   font: 400 0.63em/1em "Montserrat", "Arial", sans-serif;
-  margin-bottom: 30px;
+  margin-bottom: 32px;
 }
 
 .checkbox__visual::before {
@@ -756,7 +768,7 @@ body main {
 }
 
 .footer {
-  padding: 50px 0;
+  padding: 53px 0;
   background-color: #011c40;
 }
 
@@ -821,10 +833,11 @@ body main {
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+  margin-right: -5px;
 }
 
 .social-list__item:not(:first-child) {
-  margin-left: 13px;
+  margin-left: 16px;
 }
 
 .social-list__link {
@@ -1007,7 +1020,6 @@ body main {
   position: relative;
   z-index: 2;
   padding: 30px 25px 32px 25px;
-  min-width: 260px;
   min-height: 386px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1042,6 +1054,7 @@ body main {
   margin: 0;
   padding: 0;
   z-index: -1;
+  margin-bottom: 5px;
 }
 
 .cruises-item dt {
@@ -1206,6 +1219,10 @@ body main {
   margin-bottom: 20px;
 }
 
+.booking-form input:not(input[type="checkbox"]):last-of-type {
+  margin-bottom: 25px;
+}
+
 .booking-form input:not(input[type="checkbox"])::-webkit-input-placeholder {
   color: rgba(1, 28, 64, 0.7);
 }
@@ -1237,6 +1254,7 @@ body main {
   background-color: #f9fbfd;
   font: 600 0.88em/1em "Montserrat", "Arial", sans-serif;
   color: #011c40;
+  cursor: pointer;
 }
 
 .booking-form button:focus {
@@ -1281,14 +1299,16 @@ body main {
 
 .contacts__info p:first-of-type {
   font: 500 1.13em/1.5em "Montserrat", "Arial", sans-serif;
+  margin-bottom: 33px;
 }
 
 .contacts__info p:not(:first-of-type) {
   padding-left: 28px;
+  line-height: 1.1em;
 }
 
-.contacts__info p:not(:last-of-type) {
-  margin-bottom: 30px;
+.contacts__info p:not(:last-of-type):not(:first-of-type) {
+  margin-bottom: 27px;
 }
 
 .contacts__info svg {
@@ -1459,8 +1479,12 @@ body main {
     margin-right: 23px;
   }
 
+  .social-list {
+    margin-right: -6px;
+  }
+
   .social-list__item:not(:first-child) {
-    margin-left: 5px;
+    margin-left: 6px;
   }
 
   .social-list__link svg {
@@ -1605,12 +1629,16 @@ body main {
     padding-bottom: 0;
   }
 
+  .contacts__info p:first-of-type {
+    margin-bottom: 30px;
+  }
+
   .contacts__info p:not(:first-of-type) {
     line-height: 1.5em;
   }
 
-  .contacts__info p:not(:last-of-type) {
-    margin-bottom: 25px;
+  .contacts__info p:not(:last-of-type):not(:first-of-type) {
+    margin-bottom: 22px;
   }
 
   .contacts__info svg {
@@ -1661,6 +1689,7 @@ body main {
 
   .checkbox__visual {
     padding-left: 25px;
+    margin-bottom: 28px;
   }
 
   .checkbox__visual::before {
@@ -1795,7 +1824,7 @@ body main {
   }
 
   .footer {
-    padding: 40px 0;
+    padding: 40px 0 33px;
   }
 
   .footer__nav {
@@ -1827,8 +1856,13 @@ body main {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
+    margin-right: 0;
     margin-left: -10px;
     margin-top: -5px;
+  }
+
+  .social-list__item:not(:first-child) {
+    margin-left: 6px;
   }
 
   .social-list__item {
@@ -1914,7 +1948,7 @@ body main {
   }
 
   .cruises {
-    padding: 60px 10px;
+    padding: 60px 10px 62px;
   }
 
   .cruises h2 {
@@ -1940,7 +1974,7 @@ body main {
   }
 
   .booking {
-    padding: 65px 0;
+    padding: 62px 0 65px;
     background-image: url("../img/booking-back-mobile.jpg");
   }
 
@@ -1950,7 +1984,8 @@ body main {
 
   .booking__title h2 {
     font-size: 1.5em;
-    margin-bottom: 15px;
+    line-height: 1.3em;
+    margin-bottom: 12px;
   }
 
   .booking__title p {
@@ -1970,8 +2005,12 @@ body main {
     margin-bottom: 28px;
   }
 
+  .booking-form input:not(input[type="checkbox"]):last-of-type {
+    margin-bottom: 20px;
+  }
+
   .contacts {
-    padding: 55px 0 65px;
+    padding: 56px 0 64px;
   }
 
   .contacts__wrapper {
@@ -1994,8 +2033,8 @@ body main {
     margin-bottom: 18px;
   }
 
-  .contacts__info p:not(:last-of-type) {
-    margin-bottom: 26px;
+  .contacts__info p:not(:last-of-type):not(:first-of-type) {
+    margin-bottom: 20px;
   }
 
   .contacts__map {
