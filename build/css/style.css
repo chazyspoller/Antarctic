@@ -514,18 +514,6 @@ body main {
   outline: 2px solid #ff1553;
 }
 
-.overlay::before {
-  content: '';
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 43, 102, 0.5);
-  z-index: 4;
-}
-
 .container {
   width: 100%;
   max-width: 1920px;
@@ -1677,6 +1665,18 @@ body main {
 
   .scroll-lock {
     overflow: hidden;
+  }
+
+  .overlay::before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 43, 102, 0.5);
+    z-index: 4;
   }
 
   .container {
