@@ -16,7 +16,7 @@ function init() {
     // Необходимо указать данный тип макета.
     iconLayout: 'default#image',
     // Своё изображение иконки метки.
-    iconImageHref: '../img/svg/icon-map.svg',
+    iconImageHref: 'img/svg/icon-map.svg',
     // Размеры метки.
     iconImageSize: [20, 24],
     // Смещение левого верхнего угла иконки относительно

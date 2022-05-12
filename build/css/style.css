@@ -1334,7 +1334,7 @@ body main {
   }
 } */
 
-@media (hover: hover), screen and (min-width: 1366px) {
+@media (hover: hover), screen and (min-width: 1024px) {
   .checkbox__visual:hover {
     color: #86daed;
   }
@@ -1398,7 +1398,7 @@ body main {
   }
 }
 
-@media (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 1366px), (-o-min-device-pixel-ratio: 3/2) and (min-width: 1366px), (min-resolution: 1.5dppx) and (min-width: 1366px) {
+@media (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi), (-webkit-min-device-pixel-ratio: 1.5) and (min-width: 1024px), (-o-min-device-pixel-ratio: 3/2) and (min-width: 1024px), (min-resolution: 1.5dppx) and (min-width: 1024px) {
   .intro {
     background-image: url("../img/intro-back@2x.jpg");
   }
@@ -1412,7 +1412,7 @@ body main {
   }
 }
 
-@media (max-width: 1365px) {
+@media (max-width: 1023px) {
   .container {
     padding: 0 5.85938%;
   }
@@ -1627,7 +1627,7 @@ body main {
   }
 }
 
-@media (max-width: 1365px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1365px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 1365px) and (min-resolution: 144dpi), (max-width: 1365px) and (min-resolution: 1.5dppx) {
+@media (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1023px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 1023px) and (min-resolution: 144dpi), (max-width: 1023px) and (min-resolution: 1.5dppx) {
   .intro {
     background-image: url("../img/intro-back-tablet@2x.jpg");
   }
