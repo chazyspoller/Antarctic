@@ -36,6 +36,7 @@ $ff-default:                        "Montserrat", "Arial", sans-serif;
 $vp-320:                            320px;
 $vp-768:                            768px;
 $vp-1366:                           1024px;
+$vp-1250:                           1250px;
 
 // Retina
 // ---------------------------------
@@ -46,5 +47,6 @@ $retina-dppx:                       1.5dppx;
 // Paddings
 // ---------------------------------
 $desktop-padding:                   103/1366 * 100%;
+$pre-desktop-padding:               30/1044 * 100%;
 $tablet-padding:                    45/768 * 100%;
 $mobile-padding:                    15/320 * 100%;

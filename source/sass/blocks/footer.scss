@@ -13,13 +13,11 @@
 
 .footer__nav {
   display: grid;
-  grid-template-columns: min-content 1fr minmax(106px, 20%);
+  grid-template-columns: min-content 1fr max-content;
   column-gap: 40px;
-  align-items: center;
 
   @include vp-1365 {
     column-gap: 25px;
-    grid-template-columns: min-content 1fr minmax(106px, 18%);
   }
 
   @include vp-767 {

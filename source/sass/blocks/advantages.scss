@@ -11,7 +11,7 @@
   }
 
   @include vp-1365 {
-    padding: 90px 0;
+    padding: 90px 0 100px;
     background-image: url("../img/advantages-back-tablet.jpg");
 
     @include retina {
@@ -20,7 +20,7 @@
   }
 
   @include vp-767 {
-    padding: 55px 0 35px;
+    padding: 55px 0 65px;
     background-image: url("../img/advantages-back-mobile.jpg");
 
     @include retina {

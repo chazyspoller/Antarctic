@@ -1,6 +1,10 @@
 .cruises {
-  padding: 110px 15px 120px;
+  padding: 110px 15/1060 * 100% 120px;
   background-color: $color-light-back;
+
+  @include vp-1250 {
+    padding: 110px 0 120px;
+  }
 
   @include vp-1365 {
     padding: 90px 15px 100px;

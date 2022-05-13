@@ -1,4 +1,4 @@
-const cruisesCards = document.querySelectorAll('[data-card="cruise"]');
+const cruisesCards = document.querySelectorAll('[data-card]');
 
 const activeJS = () => {
   cruisesCards.forEach((card) => card.classList.remove('cruises-item--nojs'));
@@ -7,9 +7,13 @@ const activeJS = () => {
 const onCardClick = (evt) => {
   const cardInfo = evt.target.closest('.cruises-item');
 
-  if (cardInfo) {
-    cardInfo.classList.toggle('cruises-item--nojs');
-  }
+  cruisesCards.forEach((elem) => {
+    if (elem.getAttribute('data-card') !== cardInfo.getAttribute('data-card')) {
+      elem.classList.remove('cruises-item--nojs');
+    }
+  });
+
+  cardInfo.classList.toggle('cruises-item--nojs');
 };
 
 const openInfoCards = () => {

@@ -7,14 +7,13 @@
   }
 
   @include vp-767 {
-    padding: 56px 0 64px;
+    padding: 56px 0 45px;
   }
 }
 
 .contacts__wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 
   @include vp-767 {
     flex-direction: column-reverse;
@@ -25,6 +24,7 @@
 .contacts__info {
   width: 43%;
   padding-bottom: 30px;
+  align-self: center;
 
   @include vp-1365 {
     width: 48%;
@@ -117,11 +117,11 @@
 .contacts__map {
   position: relative;
   width: 48.2%;
-  height: 334px;
+  min-height: 334px;
 
   @include vp-1365 {
     width: 48%;
-    height: 335px;
+    min-height: 335px;
   }
 
   @include vp-767 {

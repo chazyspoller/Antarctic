@@ -671,9 +671,6 @@ body main {
   -webkit-column-gap: 15px;
   -moz-column-gap: 15px;
   column-gap: 15px;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
 .main-nav__burger {
@@ -694,6 +691,8 @@ body main {
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
+  -ms-flex-item-align: center;
+  align-self: center;
 }
 
 .nav-list__item {
@@ -721,6 +720,9 @@ body main {
   line-height: 0;
   width: 70px;
   height: 38px;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
 }
 
 .logo-dark {
@@ -763,16 +765,13 @@ body main {
 .footer__nav {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: -webkit-min-content 1fr minmax(106px, 20%);
-  -ms-grid-columns: min-content 1fr minmax(106px, 20%);
-  grid-template-columns: -webkit-min-content 1fr minmax(106px, 20%);
-  grid-template-columns: min-content 1fr minmax(106px, 20%);
+  -ms-grid-columns: -webkit-min-content 1fr -webkit-max-content;
+  -ms-grid-columns: min-content 1fr max-content;
+  grid-template-columns: -webkit-min-content 1fr -webkit-max-content;
+  grid-template-columns: min-content 1fr max-content;
   -webkit-column-gap: 40px;
   -moz-column-gap: 40px;
   column-gap: 40px;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
 .footer-list {
@@ -787,6 +786,8 @@ body main {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
+  -ms-flex-item-align: center;
+  align-self: center;
 }
 
 .footer-list__item {
@@ -813,19 +814,17 @@ body main {
   margin: 0;
   padding: 0;
   list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (-webkit-max-content)[3];
+  -ms-grid-columns: (max-content)[3];
+  grid-template-columns: repeat(3, -webkit-max-content);
+  grid-template-columns: repeat(3, max-content);
+  gap: 0 16px;
   margin-right: -5px;
-}
-
-.social-list__item:not(:first-child) {
-  margin-left: 16px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .social-list__link {
@@ -946,19 +945,16 @@ body main {
   margin: 0;
   padding: 0;
   list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  grid-auto-flow: row;
+  gap: 15px 3.30189%;
 }
 
 .advantages-list__item {
-  margin-bottom: 10px;
-  width: 31%;
   padding: 30px 30px 26px;
   background-color: #f9fbfd;
   color: #011c40;
@@ -982,7 +978,7 @@ body main {
 }
 
 .cruises {
-  padding: 110px 15px 120px;
+  padding: 110px 1.41509% 120px;
   background-color: #f9fbfd;
 }
 
@@ -1001,7 +997,7 @@ body main {
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 1fr;
   grid-auto-flow: row;
-  gap: 30px;
+  gap: 30px 2.45283%;
 }
 
 .cruises-item {
@@ -1009,6 +1005,16 @@ body main {
   z-index: 2;
   padding: 30px 25px 32px 25px;
   min-height: 386px;
+  color: #f9fbfd;
+  overflow: hidden;
+  background-color: #011c40;
+}
+
+.cruises-item__box {
+  -webkit-transform: translateY(87%);
+  -ms-transform: translateY(87%);
+  transform: translateY(87%);
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1019,53 +1025,47 @@ body main {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
-  color: #f9fbfd;
-  overflow: hidden;
-  background-color: #011c40;
+  position: relative;
 }
 
-.cruises-item h3 {
+.cruises-item__box h3 {
   margin: 0;
   padding: 0;
   position: relative;
   top: 25px;
   left: 7px;
-  -webkit-box-ordinal-group: 4;
-  -ms-flex-order: 3;
-  order: 3;
   z-index: 5;
   margin-bottom: 15px;
   font: 500 1.13em/1.5em "Montserrat", "Arial", sans-serif;
 }
 
-.cruises-item dl {
+.cruises-item__box dl {
   margin: 0;
   padding: 0;
-  z-index: -1;
+  opacity: 0;
   margin-bottom: 5px;
 }
 
-.cruises-item dt {
+.cruises-item__box dt {
   font: 500 0.88em/1.3em "Montserrat", "Arial", sans-serif;
   margin-bottom: 2px;
 }
 
-.cruises-item dd {
+.cruises-item__box dd {
   margin: 0;
   padding: 0;
   font: 400 0.88em/1.4em "Montserrat", "Arial", sans-serif;
 }
 
-.cruises-item dd:not(:last-of-type) {
+.cruises-item__box dd:not(:last-of-type) {
   margin-bottom: 11px;
 }
 
-.cruises-item a {
+.cruises-item__box a {
   position: relative;
   -webkit-box-ordinal-group: 3;
   -ms-flex-order: 2;
   order: 2;
-  z-index: -2;
   display: block;
   padding: 14px;
   width: 100%;
@@ -1079,12 +1079,12 @@ body main {
   margin-top: auto;
 }
 
-.cruises-item a:focus {
+.cruises-item__box a:focus {
   background-color: #86daed;
   outline: none;
 }
 
-.cruises-item a:active {
+.cruises-item__box a:active {
   -webkit-transform: scale(0.95);
   -ms-transform: scale(0.95);
   transform: scale(0.95);
@@ -1092,7 +1092,7 @@ body main {
 
 .cruises-item__photo img {
   position: absolute;
-  z-index: -1;
+  z-index: -2;
   width: 100%;
   height: 100%;
   top: 0;
@@ -1110,7 +1110,7 @@ body main {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  z-index: -1;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(1, 28, 64, 0)), to(#011c40));
   background: -o-linear-gradient(top, rgba(1, 28, 64, 0) 50%, #011c40 100%);
   background: linear-gradient(180deg, rgba(1, 28, 64, 0) 50%, #011c40 100%);
@@ -1124,14 +1124,11 @@ body main {
   display: none;
 }
 
-.cruises-item a[data-card="link"]:focus ~ h3 {
+.cruises-item a[data-card="link"]:focus ~ .cruises-item__box > h3 {
   position: static;
-  -webkit-box-ordinal-group: 1;
-  -ms-flex-order: 0;
-  order: 0;
 }
 
-.cruises-item a[data-card="link"]:focus ~ dl {
+.cruises-item a[data-card="link"]:focus ~ .cruises-item__box > dl {
   z-index: 10;
 }
 
@@ -1267,14 +1264,14 @@ body main {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
 }
 
 .contacts__info {
   width: 43%;
   padding-bottom: 30px;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
 }
 
 .contacts__info p {
@@ -1320,7 +1317,7 @@ body main {
 .contacts__map {
   position: relative;
   width: 48.2%;
-  height: 334px;
+  min-height: 334px;
 }
 
 .contacts__map svg {
@@ -1365,8 +1362,10 @@ body main {
     outline: none;
   }
 
-  .cruises-item a:hover {
-    background-color: #86daed;
+  .cruises-item:hover div {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
   }
 
   .cruises-item:hover img {
@@ -1375,21 +1374,18 @@ body main {
 
   .cruises-item:hover h3 {
     position: static;
-    -webkit-box-ordinal-group: 1;
-    -ms-flex-order: 0;
-    order: 0;
   }
 
   .cruises-item:hover dl {
-    z-index: 10;
-  }
-
-  .cruises-item:hover a {
-    z-index: 10;
+    opacity: 1;
   }
 
   .cruises-item:hover .cruises-item__gradient-effect {
     z-index: -1;
+  }
+
+  .cruises-item__box a:hover {
+    background-color: #86daed;
   }
 
   .booking-form input:not(input[type="checkbox"]):hover {
@@ -1417,6 +1413,20 @@ body main {
 
   .booking {
     background-image: url("../img/booking-back@2x.jpg");
+  }
+}
+
+@media (max-width: 1249px) {
+  .container {
+    padding: 0 2.87356%;
+  }
+
+  .cruises {
+    padding: 110px 0 120px;
+  }
+
+  .criuses-list {
+    gap: 15px 1.43678%;
   }
 }
 
@@ -1452,10 +1462,6 @@ body main {
     -webkit-column-gap: 25px;
     -moz-column-gap: 25px;
     column-gap: 25px;
-    -ms-grid-columns: -webkit-min-content 1fr minmax(106px, 18%);
-    -ms-grid-columns: min-content 1fr minmax(106px, 18%);
-    grid-template-columns: -webkit-min-content 1fr minmax(106px, 18%);
-    grid-template-columns: min-content 1fr minmax(106px, 18%);
   }
 
   .footer-list__item {
@@ -1469,10 +1475,7 @@ body main {
 
   .social-list {
     margin-right: -6px;
-  }
-
-  .social-list__item:not(:first-child) {
-    margin-left: 6px;
+    gap: 0 6px;
   }
 
   .social-list__link svg {
@@ -1516,12 +1519,15 @@ body main {
   }
 
   .advantages {
-    padding: 90px 0;
+    padding: 90px 0 100px;
     background-image: url("../img/advantages-back-tablet.jpg");
   }
 
+  .advantages-list {
+    gap: 15px 30px;
+  }
+
   .advantages-list__item {
-    width: 30.5%;
     padding: 25px 10px 22px 20px;
   }
 
@@ -1541,10 +1547,17 @@ body main {
   .criuses-list {
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
   }
 
   .cruises-item {
     padding: 28px 35px 35px;
+  }
+
+  .cruises-item--nojs div {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
   }
 
   .cruises-item--nojs img {
@@ -1553,24 +1566,17 @@ body main {
 
   .cruises-item--nojs h3 {
     position: static;
-    -webkit-box-ordinal-group: 1;
-    -ms-flex-order: 0;
-    order: 0;
   }
 
   .cruises-item--nojs dl {
-    z-index: 10;
-  }
-
-  .cruises-item--nojs a {
-    z-index: 10;
+    opacity: 1;
   }
 
   .cruises-item--nojs .cruises-item__gradient-effect {
     z-index: -1;
   }
 
-  .cruises-item h3 {
+  .cruises-item__box h3 {
     top: 22px;
     left: 3px;
   }
@@ -1639,7 +1645,7 @@ body main {
 
   .contacts__map {
     width: 48%;
-    height: 335px;
+    min-height: 335px;
   }
 }
 
@@ -1853,22 +1859,9 @@ body main {
   }
 
   .social-list {
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
     margin-right: 0;
     margin-left: -10px;
     margin-top: -5px;
-  }
-
-  .social-list__item:not(:first-child) {
-    margin-left: 6px;
-  }
-
-  .social-list__item {
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
   }
 
   .intro {
@@ -1919,7 +1912,7 @@ body main {
   }
 
   .advantages {
-    padding: 55px 0 35px;
+    padding: 55px 0 65px;
     background-image: url("../img/advantages-back-mobile.jpg");
   }
 
@@ -1928,18 +1921,9 @@ body main {
   }
 
   .advantages-list {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-  }
-
-  .advantages-list__item {
-    width: 100%;
-    margin-bottom: 30px;
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+    gap: 30px 0;
   }
 
   .advantages-list__item h3 {
@@ -1964,7 +1948,13 @@ body main {
     padding: 25px 25px 35px;
   }
 
-  .cruises-item h3 {
+  .cruises-item__box {
+    -webkit-transform: translateY(88%);
+    -ms-transform: translateY(88%);
+    transform: translateY(88%);
+  }
+
+  .cruises-item__box h3 {
     top: 28px;
   }
 
@@ -2010,7 +2000,7 @@ body main {
   }
 
   .contacts {
-    padding: 56px 0 64px;
+    padding: 56px 0 45px;
   }
 
   .contacts__wrapper {

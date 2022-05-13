@@ -4,6 +4,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
+  align-self: center;
 
   @include vp-767 {
     display: none;
